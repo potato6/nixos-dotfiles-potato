@@ -1,0 +1,1 @@
+{ ... }: { programs.hyprshot = { enable = true; }; }

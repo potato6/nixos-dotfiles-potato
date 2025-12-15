@@ -35,7 +35,7 @@
     '';
 
     settings = {
-      "ecosystem:enforce_permissions" = true;
+      "ecosystem:enforce_permissions" = false;
       permission = [
         "${pkgs.hyprshot}/bin/hyprshot, screencopy, allow"
         "${pkgs.hyprpicker}/bin/hyprpicker, screencopy, allow"

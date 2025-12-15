@@ -1,23 +1,27 @@
 { pkgs, lib, ... }: {
-  programs.chromium = {
+
+  programs.brave = {
     enable = true;
     package = pkgs.brave;
     dictionaries = [ pkgs.hunspellDictsChromium.en_US ];
+
     extensions = [
-      "olnbjpaejebpnokblkepbphhembdicik" # WebGL Fingerprint Defender
-      "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube - Skip Sponsor
-      "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube Dislike
-      "oboonakemofpalcgghocfoadofidjkkk" # KeePassXC-Browser
-      "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
-      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
-      "bnomihfieiccainjcjblhegjgglakjdd" # 'Improve YouTube!'
-      "dhdgffkkebhmkfjojejmpbldmpobfkfo" # Tampermonkey
+      "olnbjpaejebpnokblkepbphhembdicik" # webgl fingerprint defender
+      "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock for youtube
+      "gebbhagfogifgggkldgodflihgfeippi" # return youtube dislike
+      "oboonakemofpalcgghocfoadofidjkkk" # keepassxc-browser
+      "ldpochfccmkkmhdbclfhpagapcfdljkj" # decentraleyes
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
+      "bnomihfieiccainjcjblhegjgglakjdd" # improve youtube!
+      "jinjaccalgkegednnccohejagnlnfdag" # violentmonkey
+      "clngdbkpkpeebahjckkjfobafhncgmne" # Stylus
     ];
 
     # https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/gpu/vaapi.md
     # vulkan is just broken at the time
 
     commandLineArgs = [
+      "--disable-features=BraveAIChat,BraveRewards,BraveVPN,BraveNews"
       "--enable-blink-features=MiddleClickAutoscroll"
       "--ignore-gpu-blocklist"
       "--disable-gpu-driver-bug-workaround"

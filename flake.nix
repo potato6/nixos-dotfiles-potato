@@ -11,8 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-cachyos-kernel.url =
-      "github:xddxdd/nix-cachyos-kernel/d0d2a987c83167903c591e13aae81011ffadaf8c";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/";
 
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
@@ -40,9 +39,14 @@
           { nixpkgs.overlays = [ proton-cachyos.overlays.default ]; }
 
           ({ pkgs, ... }: {
-            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlay ];
+            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
             boot.kernelPackages =
               pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+            # Binary cache
+            nix.settings.substituters =
+              [ "https://attic.xuyh0120.win/lantian" ];
+            nix.settings.trusted-public-keys =
+              [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
           })
 
           home-manager.nixosModules.home-manager
@@ -53,7 +57,7 @@
               imports = [
                 ./home.nix
                 ./home
-                dankMaterialShell.homeModules.dankMaterialShell.default
+                dankMaterialShell.homeModules.dank-material-shell
               ];
             };
           }

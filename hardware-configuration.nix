@@ -15,7 +15,7 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/d572385b-52c0-4a2a-862c-eccc6400c6e3";
     fsType = "btrfs";
-    options = [ "subvol=@" "compress-force=zstd:1" ];
+    options = [ "subvol=@" ];
   };
 
   boot.initrd.luks.devices."luks-cdf17c36-4db0-4c07-a078-07a0c9a80a94".device =
@@ -25,6 +25,12 @@
     device = "/dev/disk/by-uuid/7C9C-D4A6";
     fsType = "vfat";
     options = [ "uid=0" "gid=0" "umask=077" ];
+  };
+
+  fileSystems."/mnt/DISCO" = {
+    device = "UUID=5c120c58-ffea-4ad5-9a59-eeb8ed2b9239";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" "x-gvfs-show" ];
   };
 
   swapDevices = [ ];

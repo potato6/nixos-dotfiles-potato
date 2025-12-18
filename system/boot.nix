@@ -18,6 +18,8 @@
     };
 
     kernelParams = [
+      "processor.ignore_ppc=1"
+      "ec_sys.write_support=1"
       "tsc=reliable"
       "clocksource=tsc"
       "nowatchdog"

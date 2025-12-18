@@ -1,9 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 let
   # 1. Import your existing hardware scan.
   # We do this to "read" what drives were detected during installation.
-  hwConfig = import ./hardware-configuration.nix { inherit config lib pkgs; };
+  hwConfig = import ../hardware-configuration.nix {
+    inherit config lib pkgs modulesPath;
+  };
 
   # 2. Iterate over every file system found in hardware-configuration.nix
   fsUpdates = lib.mapAttrs (mountPoint: fsConfig:
@@ -48,16 +50,16 @@ let
     }
 
     # --- CONDITION 3: OTHERS (Fat32, Swap, etc.) ---
-    else {
-      # Do nothing. Return empty set to keep default options.
-      options = [ ];
-    }
+    else
+      {
+        # Do nothing. Return empty set to keep default options.
+      }
 
   ) hwConfig.fileSystems;
 
 in {
   # Import the original hardware config so we have the base definitions
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ../hardware-configuration.nix ];
 
   # Apply our updates. NixOS will merge our new 'options' list 
   # with the basic settings (like 'subvol=home') from the hardware config.

@@ -2,6 +2,7 @@
 
   programs.kitty = {
     enable = true;
+    enableGitIntegration = true;
     font = {
       name = "FiraCode Nerd SemiBold";
       size = 13.0;

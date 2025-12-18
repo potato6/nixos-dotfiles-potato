@@ -51,14 +51,6 @@
 
       source = [ "~/.config/hypr/monitors.conf" ];
 
-      # Variables
-      "$terminal" = "kitty";
-      "$mainMod" = "SUPER";
-      "$menu" = "rofi -show drun -show-icons";
-
-      "$scriptsDir" = "${config.xdg.configHome}/hypr/scripts";
-      "$UserScripts" = "${config.xdg.configHome}/hypr/UserScripts";
-
       # REMIND TO USE NWG-DISPLAY INSTEAD OF HARDCODING HERE
       #monitor = [
       #  "DP-2,preferred,1366x306,1.0"
@@ -232,119 +224,119 @@
       bind = [
 
         # Hyprspace
-        "$mainMod, apostrophe, exec, dms ipc call hypr toggleOverview"
+        "SUPER, apostrophe, exec, dms ipc call hypr toggleOverview"
 
         # Basic Actions
-        "$mainMod, Return, exec, $terminal" # Launch terminal
-        "$mainMod, Q, killactive," # Close active window
-        "$mainMod SHIFT, Q, exec, $scriptsDir/KillActiveProcess.sh" # Kill active process with script
-        "$mainMod, T, exec, thunar" # Launch file manager
-        "$mainMod, F, togglefloating," # Toggle floating mode
-        "$mainMod SHIFT, F, fullscreen" # Toggle fullscreen
-        "$mainMod, D, exec, dms ipc call spotlight toggle" # Launch application menu
+        "SUPER, Return, exec, kitty" # Launch terminal
+        "SUPER, Q, killactive," # Close active window
+        "SUPER SHIFT, Q, exec, $scriptsDir/KillActiveProcess.sh" # Kill active process with script
+        "SUPER, T, exec, thunar" # Launch file manager
+        "SUPER, F, togglefloating," # Toggle floating mode
+        "SUPER SHIFT, F, fullscreen" # Toggle fullscreen
+        "SUPER, D, exec, dms ipc call spotlight toggle" # Launch application menu
 
         # Screenshot Bindings
         ", Print, exec, hyprshot -m window -m active -o /mnt/DISCO/Pictures/screenshots/ & ~/.config/hypr/scripts/Sounds.sh --screenshot" # Screenshot active window
-        "$mainMod, Print, exec, hyprshot -m region -z -o /mnt/DISCO/Pictures/screenshots/ && ~/.config/hypr/scripts/Sounds.sh --screenshot" # screenshot region
+        "SUPER, Print, exec, hyprshot -m region -z -o /mnt/DISCO/Pictures/screenshots/ && ~/.config/hypr/scripts/Sounds.sh --screenshot" # screenshot region
 
         # Refresh broken waybar
-        "$mainMod SHIFT, R, exec, systemctl restart --user waybar.service"
+        "SUPER SHIFT, R, exec, systemctl restart --user waybar.service"
 
         # pyprland
-        "$mainMod SHIFT, Return, exec, pypr toggle term" # Dropdown terminal
-        "$mainMod, Z, exec, pypr zoom" # Toggle Zoom
+        "SUPER SHIFT, Return, exec, pypr toggle term" # Dropdown terminal
+        "SUPER, Z, exec, pypr zoom" # Toggle Zoom
 
         # Application Launchers
 
         # Launch Brave browser
-        "$mainMod, I, exec, brave"
+        "SUPER, I, exec, brave"
 
         # Launch Discord
 
-        "$mainMod, V, exec, vesktop --disable-smooth-scrolling"
+        "SUPER, V, exec, vesktop --disable-smooth-scrolling"
 
         # Layout Controls (Dwindle)
-        "$mainMod, J, togglesplit," # Toggle split (dwindle)
-        "$mainMod SHIFT, I, togglesplit" # Alternative toggle split
+        "SUPER, J, togglesplit," # Toggle split (dwindle)
+        "SUPER SHIFT, I, togglesplit" # Alternative toggle split
 
         # Layout Controls (Master)
-        "$mainMod CTRL, D, layoutmsg, removemaster" # Remove master window
-        "$mainMod, I, layoutmsg, addmaster" # Add master window
-        "$mainMod, J, layoutmsg, cyclenext" # Cycle to next window
-        "$mainMod, K, layoutmsg, cycleprev" # Cycle to previous window
-        "$mainMod CTRL, Return, layoutmsg, swapwithmaster" # Swap with master
+        "SUPER CTRL, D, layoutmsg, removemaster" # Remove master window
+        "SUPER, I, layoutmsg, addmaster" # Add master window
+        "SUPER, J, layoutmsg, cyclenext" # Cycle to next window
+        "SUPER, K, layoutmsg, cycleprev" # Cycle to previous window
+        "SUPER CTRL, Return, layoutmsg, swapwithmaster" # Swap with master
 
         # Group Controls
-        "$mainMod, G, togglegroup" # Toggle window group
-        "$mainMod CTRL, tab, changegroupactive" # Change active window in group
+        "SUPER, G, togglegroup" # Toggle window group
+        "SUPER CTRL, tab, changegroupactive" # Change active window in group
 
         # Window Cycling
         "ALT, tab, cyclenext" # Cycle to next window
         "ALT, tab, bringactivetotop" # Bring active window to top
 
         # Window Movement
-        "$mainMod CTRL, left, movewindow, l" # Move window left
-        "$mainMod CTRL, right, movewindow, r" # Move window right
-        "$mainMod CTRL, up, movewindow, u" # Move window up
-        "$mainMod CTRL, down, movewindow, d" # Move window down
+        "SUPER CTRL, left, movewindow, l" # Move window left
+        "SUPER CTRL, right, movewindow, r" # Move window right
+        "SUPER CTRL, up, movewindow, u" # Move window up
+        "SUPER CTRL, down, movewindow, d" # Move window down
 
         # Focus Movement
-        "$mainMod, left, movefocus, l" # Focus left
-        "$mainMod, right, movefocus, r" # Focus right
-        "$mainMod, up, movefocus, u" # Focus up
-        "$mainMod, down, movefocus, d" # Focus down
+        "SUPER, left, movefocus, l" # Focus left
+        "SUPER, right, movefocus, r" # Focus right
+        "SUPER, up, movefocus, u" # Focus up
+        "SUPER, down, movefocus, d" # Focus down
 
         # Workspace Navigation
-        "$mainMod, tab, workspace, m+1" # Next workspace
-        "$mainMod SHIFT, tab, workspace, m-1" # Previous workspace
-        "$mainMod, period, workspace, e+1" # Scroll workspaces forward
-        "$mainMod, comma, workspace, e-1" # Scroll workspaces backward
-        "$mainMod, mouse_down, workspace, e+1" # Scroll down to next workspace
-        "$mainMod, mouse_up, workspace, e-1" # Scroll up to previous workspace
+        "SUPER, tab, workspace, m+1" # Next workspace
+        "SUPER SHIFT, tab, workspace, m-1" # Previous workspace
+        "SUPER, period, workspace, e+1" # Scroll workspaces forward
+        "SUPER, comma, workspace, e-1" # Scroll workspaces backward
+        "SUPER, mouse_down, workspace, e+1" # Scroll down to next workspace
+        "SUPER, mouse_up, workspace, e-1" # Scroll up to previous workspace
 
         # Switch to Workspaces (1-10)
-        "$mainMod, code:10, workspace, 1"
-        "$mainMod, code:11, workspace, 2"
-        "$mainMod, code:12, workspace, 3"
-        "$mainMod, code:13, workspace, 4"
-        "$mainMod, code:14, workspace, 5"
-        "$mainMod, code:15, workspace, 6"
-        "$mainMod, code:16, workspace, 7"
-        "$mainMod, code:17, workspace, 8"
-        "$mainMod, code:18, workspace, 9"
-        "$mainMod, code:19, workspace, 10"
+        "SUPER, code:10, workspace, 1"
+        "SUPER, code:11, workspace, 2"
+        "SUPER, code:12, workspace, 3"
+        "SUPER, code:13, workspace, 4"
+        "SUPER, code:14, workspace, 5"
+        "SUPER, code:15, workspace, 6"
+        "SUPER, code:16, workspace, 7"
+        "SUPER, code:17, workspace, 8"
+        "SUPER, code:18, workspace, 9"
+        "SUPER, code:19, workspace, 10"
 
         # Move Window to Workspaces (1-10)
-        "$mainMod SHIFT, code:10, movetoworkspace, 1"
-        "$mainMod SHIFT, code:11, movetoworkspace, 2"
-        "$mainMod SHIFT, code:12, movetoworkspace, 3"
-        "$mainMod SHIFT, code:13, movetoworkspace, 4"
-        "$mainMod SHIFT, code:14, movetoworkspace, 5"
-        "$mainMod SHIFT, code:15, movetoworkspace, 6"
-        "$mainMod SHIFT, code:16, movetoworkspace, 7"
-        "$mainMod SHIFT, code:17, movetoworkspace, 8"
-        "$mainMod SHIFT, code:18, movetoworkspace, 9"
-        "$mainMod SHIFT, code:19, movetoworkspace, 10"
-        "$mainMod SHIFT, bracketleft, movetoworkspace, -1" # Previous workspace
-        "$mainMod SHIFT, bracketright, movetoworkspace, +1" # Next workspace
+        "SUPER SHIFT, code:10, movetoworkspace, 1"
+        "SUPER SHIFT, code:11, movetoworkspace, 2"
+        "SUPER SHIFT, code:12, movetoworkspace, 3"
+        "SUPER SHIFT, code:13, movetoworkspace, 4"
+        "SUPER SHIFT, code:14, movetoworkspace, 5"
+        "SUPER SHIFT, code:15, movetoworkspace, 6"
+        "SUPER SHIFT, code:16, movetoworkspace, 7"
+        "SUPER SHIFT, code:17, movetoworkspace, 8"
+        "SUPER SHIFT, code:18, movetoworkspace, 9"
+        "SUPER SHIFT, code:19, movetoworkspace, 10"
+        "SUPER SHIFT, bracketleft, movetoworkspace, -1" # Previous workspace
+        "SUPER SHIFT, bracketright, movetoworkspace, +1" # Next workspace
 
         # Move Window to Workspaces Silently (1-10)
-        "$mainMod CTRL, code:10, movetoworkspacesilent, 1"
-        "$mainMod CTRL, code:11, movetoworkspacesilent, 2"
-        "$mainMod CTRL, code:12, movetoworkspacesilent, 3"
-        "$mainMod CTRL, code:13, movetoworkspacesilent, 4"
-        "$mainMod CTRL, code:14, movetoworkspacesilent, 5"
-        "$mainMod CTRL, code:15, movetoworkspacesilent, 6"
-        "$mainMod CTRL, code:16, movetoworkspacesilent, 7"
-        "$mainMod CTRL, code:17, movetoworkspacesilent, 8"
-        "$mainMod CTRL, code:18, movetoworkspacesilent, 9"
-        "$mainMod CTRL, code:19, movetoworkspacesilent, 10"
-        "$mainMod CTRL, bracketleft, movetoworkspacesilent, -1" # Previous silently
-        "$mainMod CTRL, bracketright, movetoworkspacesilent, +1" # Next silently
+        "SUPER CTRL, code:10, movetoworkspacesilent, 1"
+        "SUPER CTRL, code:11, movetoworkspacesilent, 2"
+        "SUPER CTRL, code:12, movetoworkspacesilent, 3"
+        "SUPER CTRL, code:13, movetoworkspacesilent, 4"
+        "SUPER CTRL, code:14, movetoworkspacesilent, 5"
+        "SUPER CTRL, code:15, movetoworkspacesilent, 6"
+        "SUPER CTRL, code:16, movetoworkspacesilent, 7"
+        "SUPER CTRL, code:17, movetoworkspacesilent, 8"
+        "SUPER CTRL, code:18, movetoworkspacesilent, 9"
+        "SUPER CTRL, code:19, movetoworkspacesilent, 10"
+        "SUPER CTRL, bracketleft, movetoworkspacesilent, -1" # Previous silently
+        "SUPER CTRL, bracketright, movetoworkspacesilent, +1" # Next silently
 
         # Miscellaneous
-        "$mainMod ALT, F, exec, hyprctl dispatch workspaceopt allfloat" # All windows float
-        "$mainMod SHIFT, C, exec, dms ipc call clipboard toggle"
+        "SUPER ALT, F, exec, hyprctl dispatch workspaceopt allfloat" # All windows float
+        "SUPER SHIFT, C, exec, dms ipc call clipboard toggle"
       ];
 
       # Lock Bindings (bindl)
@@ -368,16 +360,16 @@
 
       # Edge-Triggered Bindings with Lock (binde)
       binde = [
-        "$mainMod SHIFT, left, resizeactive,-50 0" # Resize window left
-        "$mainMod SHIFT, right, resizeactive,50 0" # Resize window right
-        "$mainMod SHIFT, up, resizeactive,0 -50" # Resize window up
-        "$mainMod SHIFT, down, resizeactive,0 50" # Resize window down
+        "SUPER SHIFT, left, resizeactive,-50 0" # Resize window left
+        "SUPER SHIFT, right, resizeactive,50 0" # Resize window right
+        "SUPER SHIFT, up, resizeactive,0 -50" # Resize window up
+        "SUPER SHIFT, down, resizeactive,0 50" # Resize window down
       ];
 
       # Mouse Bindings (bindm)
       bindm = [
-        "$mainMod, mouse:272, movewindow" # Move window with left click
-        "$mainMod, mouse:273, resizewindow" # Resize window with right click
+        "SUPER, mouse:272, movewindow" # Move window with left click
+        "SUPER, mouse:273, resizewindow" # Resize window with right click
       ];
 
       workspace = [

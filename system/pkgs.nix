@@ -96,7 +96,6 @@
     lsd # LS replacer
     bat # cat replacer
     fd # find replacer
-    ripgrep # grep replacer
     grc # Generic text colouriser
     fzf
   ];

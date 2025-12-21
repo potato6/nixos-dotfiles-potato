@@ -127,12 +127,21 @@
       BraveP3AEnabled = false;
       BraveStatsPingEnabled = false;
       BraveWebDiscoveryEnabled = false;
-
       BraveWalletDisabled = false; # NOT DISABLED
 
+      # Chromium in general
       WebRtcIPHandling = "disable_non_proxied_udp";
       AudioCaptureAllowed = false;
       VideoCaptureAllowed = false;
+      PasswordManagerEnabled = false;
+      PasswordManagerPasskeysEnabled = false;
+      PasswordSharingEnabled = false;
+      ImportSavedPasswords = false;
+      PaymentMethodQueryEnabled = false;
+      AutoFillEnabled = false;
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
+      AutofillPredictionSettings = false;
     };
   };
 }

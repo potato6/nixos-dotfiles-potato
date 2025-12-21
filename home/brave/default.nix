@@ -21,7 +21,6 @@
     # vulkan is just broken at the time
 
     commandLineArgs = [
-      "--disable-features=BraveAIChat,BraveRewards,BraveVPN,BraveNews"
       "--enable-blink-features=MiddleClickAutoscroll"
       "--ignore-gpu-blocklist"
       "--disable-gpu-driver-bug-workaround"

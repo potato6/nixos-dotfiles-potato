@@ -4,13 +4,14 @@
   environment.systemPackages = with pkgs; [
     # System Utilities
     clang
-    rustup
+    cargo
+    rustc
     gearlever
     lsfg-vk-ui
     lsfg-vk
-    p7zip
     unrar
     zip
+    p7zip-rar
     lz4
     unzip
     xarchiver
@@ -112,5 +113,26 @@
     # This module configures Hyprland and adds it to your user’s PATH, but does not make certain system-level changes. NixOS users should enable the NixOS module with programs.hyprland.enable, which makes system-level changes such as adding a desktop session entry.
     hyprland = { enable = true; };
     fish.enable = true;
+  };
+
+  # https://support.brave.app/hc/en-us/articles/360039248271-Group-Policy
+  programs.chromium = {
+    enable = true;
+    extraOpts = {
+      BraveRewardsDisabled = true;
+      BraveVPNDisabled = true;
+      BraveAIChatEnabled = false;
+      BraveNewsDisabled = true;
+      BraveTalkDisabled = true;
+      BraveP3AEnabled = false;
+      BraveStatsPingEnabled = false;
+      BraveWebDiscoveryEnabled = false;
+
+      BraveWalletDisabled = false; # NOT DISABLED
+
+      WebRtcIPHandling = "disable_non_proxied_udp";
+      AudioCaptureAllowed = false;
+      VideoCaptureAllowed = false;
+    };
   };
 }

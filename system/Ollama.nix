@@ -2,7 +2,7 @@
   services = {
     ollama = {
       enable = true; # Enable Ollama service
-      package = pkgs.ollama-vulkan; # pkgs.ollama[,-vulkan,-rocm,-cuda,-cpu]`.
+      package = pkgs.ollama-cpu; # pkgs.ollama ,-vulkan,-rocm,-cuda,-cpu`.
       port = 11434; # HTTP API port
       host = "127.0.0.1"; # Bind address
 

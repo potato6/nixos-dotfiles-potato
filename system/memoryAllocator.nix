@@ -1,9 +1,5 @@
 { ... }: {
-  boot.kernel.sysctl = {
-    "vm.overcommit_memory" = 1;
-    # Reduce memory fragmentation from many small allocations
-    "vm.compact_memory" = 1; # Trigger compaction on demand
-  };
+  boot.kernel.sysctl = { "vm.overcommit_memory" = 1; };
   systemd.tmpfiles.rules = [
     # THP Shrinker has been added in the 6.12 Kernel
     # Default Value is 511

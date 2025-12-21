@@ -93,7 +93,6 @@
 
     # libraries
     uutils-coreutils-noprefix # coreutils rewrite
-    lsd # LS replacer
     bat # cat replacer
     fd # find replacer
     grc # Generic text colouriser

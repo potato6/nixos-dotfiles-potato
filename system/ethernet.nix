@@ -24,7 +24,14 @@
     enable = true;
     settings = {
       listen_addresses = [ "127.0.0.1:53" "[::1]:53" ];
-      server_names = [ "nextdns-ultralow" "mullvad-doh" "cs-brazil6" ];
+      server_names = [
+        "nextdns-ultralow"
+        "mullvad-doh"
+        "cs-brazil6"
+        "adguard-dns-unfiltered-doh-ipv6"
+        "controld-uncensored"
+        "quad9-doh-ip6-port443-nofilter-pri"
+      ];
       ipv6_servers = true;
       require_dnssec = true;
       cache = true;

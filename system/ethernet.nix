@@ -35,10 +35,6 @@
       ipv6_servers = true;
       require_dnssec = true;
       cache = true;
-      cache_size = 8192;
-      cache_min_ttl = 2400;
-      cache_max_ttl = 86400;
-      cache_neg_min_ttl = 600;
       doh_servers = true;
       dnscrypt_servers = true;
       require_nolog = true;
@@ -46,7 +42,6 @@
       http3 = true;
       lb_strategy = "fastest";
       lb_estimator = true;
-      keepalive = 30;
       bootstrap_resolvers = [ "1.1.1.1:53" "8.8.8.8:53" "9.9.9.9:53" ];
       sources.public-resolvers = {
         urls = [

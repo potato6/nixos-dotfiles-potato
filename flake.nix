@@ -39,9 +39,17 @@
           { nixpkgs.overlays = [ proton-cachyos.overlays.default ]; }
 
           ({ pkgs, ... }: {
-            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+            nixpkgs.overlays = [
+              # shim that behaves like overlays.pinned: use the flake's legacyPackages
+              (final: prev: {
+                cachyosKernels =
+                  inputs.nix-cachyos-kernel.legacyPackages."${final.stdenv.hostPlatform.system}";
+              })
+            ];
+
+            # use the kernel package set as expected by NixOS
             boot.kernelPackages =
-              pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+              pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
 
             # Binary cache
             nix.settings.substituters =

@@ -11,8 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-cachyos-kernel.url =
-      "github:xddxdd/nix-cachyos-kernel/bb7b8aa687464f24dcd452354d9621331d6b0737";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
@@ -40,9 +39,10 @@
           { nixpkgs.overlays = [ proton-cachyos.overlays.default ]; }
 
           ({ pkgs, ... }: {
-            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
+            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
             boot.kernelPackages =
-              pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+              pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
             # Binary cache
             nix.settings.substituters =
               [ "https://attic.xuyh0120.win/lantian" ];

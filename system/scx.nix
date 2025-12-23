@@ -1,8 +1,8 @@
 { ... }: {
   services.scx = {
     enable = true;
-    scheduler = "scx_bpfland";
-    extraArgs = [ "--local-kthreads" "--cpufreq" ];
+    scheduler = "scx_lavd";
+    extraArgs = [ "--enable-cpu-bw" "--autopower" ];
   };
 
   powerManagement = {

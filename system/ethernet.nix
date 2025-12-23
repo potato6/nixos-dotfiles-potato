@@ -32,6 +32,7 @@
         "controld-uncensored"
         "quad9-doh-ip6-port443-nofilter-pri"
       ];
+      ipv4_servers = true;
       ipv6_servers = true;
       require_dnssec = true;
       cache = true;
@@ -40,7 +41,6 @@
       require_nolog = true;
       require_nofilter = true;
       http3 = true;
-      lb_strategy = "fastest";
       lb_estimator = true;
       bootstrap_resolvers = [ "1.1.1.1:53" "8.8.8.8:53" "9.9.9.9:53" ];
       sources.public-resolvers = {
@@ -54,5 +54,4 @@
       };
     };
   };
-
 }

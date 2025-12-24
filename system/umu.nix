@@ -13,6 +13,8 @@
 
       # https://github.com/CachyOS/proton-cachyos
 
+      PROTON_LOCAL_SHADER_CACHE = 1;
+      ENABLE_LAYER_MESA_ANTI_LAG = 1;
       PROTON_USE_NTSYNC = 1;
       PROTON_DXVK_GPLASYNC = 1;
       PROTON_ENABLE_WAYLAND = 1;

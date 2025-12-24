@@ -19,7 +19,6 @@
     cachix
     util-linux
     peazip
-    yt-dlp-light
     ffmpeg
     nwg-displays
     exiftool

@@ -13,11 +13,12 @@
     smartd.enable = true; # Disk monitoring
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   nix = {
     optimise.automatic = true;
     settings = {
+      warn-dirty = false;
+      fallback = true;
+      connect-timeout = 1;
       auto-optimise-store = true; # Automatically optimize the Nix store
       experimental-features = [ "nix-command" "flakes" ];
       system-features = [
@@ -31,6 +32,14 @@
         # "gccarch-x86-64-v4"
         # "gccarch-znver4"
       ];
+    };
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      input-fonts.acceptLicense = true;
+      joypixels.acceptLicense = true;
     };
   };
 

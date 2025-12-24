@@ -19,15 +19,15 @@
       hwdec = "auto";
       video-sync = "display-resample";
       tscale = "mitchell";
-      interpolation = "yes";
+      interpolation = true;
 
       osd-font-size = 17;
-      keep-open = "yes";
+      keep-open = true;
 
-      vulkan-async-compute = "yes";
-      vulkan-async-transfer = "yes";
+      vulkan-async-compute = true;
+      vulkan-async-transfer = true;
       vulkan-queue-count = 1;
-      vd-lavc-dr = "yes";
+      vd-lavc-dr = true;
 
     };
 

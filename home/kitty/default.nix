@@ -9,7 +9,7 @@
     };
 
     settings = {
-      sync_to_monitor = "yes";
+      sync_to_monitor = true;
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";

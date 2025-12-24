@@ -3,7 +3,7 @@
 this is just the personal dotfiles that i use, hyprland + home manager + [DankMaterialShell
 ](https://github.com/AvengeMedia/DankMaterialShell);
 
- ...as a side goal with this is to optimize every aspect of the system with a similar goal to [cachyos](https://github.com/CachyOS)
+...as a side goal with this is to optimize every aspect of the system with a similar goal to [cachyos](https://github.com/CachyOS)
 
 **reminders for future instalations:**
 
@@ -16,7 +16,8 @@ generate monitor.conf by using nwg-displays, then re-run nixos builder
 there is a bug in current wine/proton that 'right click' context menu doesn work with the env PROTON_ENABLE_WAYLAND = 1, if you are opening a non-game.
 
 # Credits
-contains parts copied/learned from many different developers across github. 
+
+contains parts referenced from many different developers across github.
 
 https://github.com/JaKooLit/Hyprland-Dots
 

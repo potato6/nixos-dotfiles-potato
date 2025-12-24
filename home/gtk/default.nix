@@ -1,6 +1,5 @@
-
-{ pkgs, ...}:{
-    gtk = {
+{ pkgs, ... }: {
+  gtk = {
     enable = true;
 
     theme = {
@@ -39,6 +38,5 @@
       "gtk-application-prefer-dark-theme" = 1;
     };
   };
-
 
 }

@@ -1,8 +1,9 @@
-{ ... }: {
+{ pkgs, ... }: {
   services.scx = {
     enable = true;
-    scheduler = "scx_lavd";
-    extraArgs = [ "--enable-cpu-bw" "--autopower" ];
+    package = pkgs.scx.rustscheds;
+    scheduler = "scx_bpfland";
+    extraArgs = [ "--local-kthreads" ];
   };
 
   powerManagement = {

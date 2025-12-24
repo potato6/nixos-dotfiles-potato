@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
 
   imports =
     [ ./hyprpolkitagent.nix ./pyprland.nix ./hypridle.nix ./hyprshot.nix ];
@@ -17,14 +17,11 @@
 
     plugins = [
       pkgs.hyprlandPlugins.hypr-dynamic-cursors
-      pkgs.hyprlandPlugins.hyprfocus
       # ...
     ];
 
     extraConfig = ''
-       plugin:hyprfocus {
-        fade_opacity = 0.97
-        }
+
        plugin:dynamic-cursors {
         mode = stretch
         threshold = 2
@@ -40,10 +37,7 @@
         "${pkgs.hyprshot}/bin/hyprshot, screencopy, allow"
         "${pkgs.hyprpicker}/bin/hyprpicker, screencopy, allow"
         "${pkgs.grim}/bin/grim, screencopy, allow"
-        "${pkgs.hyprlandPlugins.hyprexpo}/lib/libhyprexpo.so, plugin, allow"
         "${pkgs.hyprlandPlugins.hypr-dynamic-cursors}/lib/libhypr-dynamic-cursors.so, plugin, allow"
-        "${pkgs.hyprlandPlugins.hyprfocus}/lib/libhyprfocus.so, plugin, allow"
-        "${pkgs.hyprlandPlugins.hyprscrolling}/lib/libhyprscrolling.so, plugin, allow"
       ];
 
       # Source the monitors.conf file

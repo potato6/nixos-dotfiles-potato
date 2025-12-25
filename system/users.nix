@@ -4,6 +4,7 @@
   users = {
     mutableUsers = true;
     users.potato = {
+      shell = pkgs.fish;
       hashedPassword = null;
       homeMode = "755";
       isNormalUser = true;

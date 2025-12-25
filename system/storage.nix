@@ -14,7 +14,7 @@ let
     if fsConfig.fsType == "btrfs" then {
       options = [
         # Compression: Saves space and reduces the amount of data written to the SSD.
-        "compress-force=zstd"
+        "compress-force=zstd:1"
 
         # Write Reduction: Never write "access timestamps" (saves SSD life).
         "noatime"
@@ -42,10 +42,6 @@ let
         # Allows the HDD to group writes together, reducing fragmentation and noise.
         # Risk: You lose 60s of work on power failure.
         "commit=60"
-
-        # Boot reliability: Large HDDs take time to spin up. 
-        # This prevents the boot process from giving up too early.
-        "x-systemd.device-timeout=0"
       ];
     }
 

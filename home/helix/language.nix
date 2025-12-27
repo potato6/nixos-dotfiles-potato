@@ -16,6 +16,7 @@ let
   };
 
 in {
+  language-server.rust-analyzer.config.check = { command = "clippy"; };
 
   language-server = {
     emmet-ls = {
@@ -102,6 +103,7 @@ in {
 
     {
       name = "rust";
+      language-servers = [ "rust-analyzer" "gpt" ];
       scope = "source.rust";
       file-types = [ "rs" ];
       auto-format = true;

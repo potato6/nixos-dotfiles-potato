@@ -331,128 +331,26 @@
     };
   };
 
-  # Create the QuickCSS file with pure monochrome colors
   home.file.".config/vesktop/settings/quickCss.css".text = ''
-    /* Override font settings */
-    body {
-      --font: 'Verdana' !important;
-      font-weight: 400 !important;
-      letter-spacing: normal !important;
-    }
-
-    /* Pure monochrome color scheme using opacity */
     :root {
+      /* Monochrome (Grayscale) Accents */
+      --accent-1: oklch(75% 0 0);
+      --accent-2: oklch(70% 0 0);
+      --accent-3: oklch(65% 0 0);
+      --accent-4: oklch(60% 0 0);
+      --accent-5: oklch(55% 0 0);
+      --accent-new: oklch(70% 0 0); /* Mute/Delete buttons */
+    }
 
-      /* Border colors and hover effects */
-      --border-hover: hsla(0, 0%, 100%, 0.3) !important;  /* Added this for hover borders */
-      --border-light: hsla(0, 0%, 100%, 0.05) !important;  /* Added for general borders */
-      --border: hsla(0, 0%, 100%, 0.05) !important;
-
-            /* Icon colors */
-      --icon-primary: hsla(0, 0%, 100%, 0.8) !important;
-      --icon-secondary: hsla(0, 0%, 100%, 0.6) !important;
-      --icon-muted: hsla(0, 0%, 100%, 0.4) !important;
-      --interactive-normal: hsla(0, 0%, 100%, 0.7) !important;
-      --interactive-hover: hsla(0, 0%, 100%, 0.8) !important;
-      --interactive-active: hsla(0, 0%, 100%, 0.9) !important;
-      --interactive-muted: hsla(0, 0%, 100%, 0.4) !important;
-
-      /* Status colors used in icons */
-      --status-danger: hsla(0, 0%, 100%, 0.7) !important;
-      --status-warning: hsla(0, 0%, 100%, 0.7) !important;
-      --status-positive: hsla(0, 0%, 100%, 0.7) !important;
+    body {
+      /* Font Overrides */
+      --font: 'Verdana', sans-serif;
+      --code-font: 'Consolas', monospace; 
       
-      /* Base accent colors (pure white with varying opacity) */
-      --purple-1: hsla(0, 0%, 100%, 0.75) !important;
-      --purple-2: hsla(0, 0%, 100%, 0.70) !important;
-      --purple-3: hsla(0, 0%, 100%, 0.65) !important;
-      --purple-4: hsla(0, 0%, 100%, 0.60) !important;
-      --purple-5: hsla(0, 0%, 100%, 0.55) !important;
-
-      /* Text colors (pure white with varying opacity) */
-      --text-0: hsla(0, 0%, 0%, 0.87) !important;
-      --text-1: hsla(0, 0%, 100%, 0.95) !important;
-      --text-2: hsla(0, 0%, 100%, 0.85) !important;
-      --text-3: hsla(0, 0%, 100%, 0.75) !important;
-      --text-4: hsla(0, 0%, 100%, 0.60) !important;
-      --text-5: hsla(0, 0%, 100%, 0.40) !important;
-
-      /* Status colors (pure white/black with opacity for distinction) */
-      --online: hsla(0, 0%, 100%, 0.70) !important;
-      --dnd: hsla(0, 0%, 0%, 0.50) !important;
-      --idle: hsla(0, 0%, 100%, 0.75) !important;
-      --streaming: hsla(0, 0%, 100%, 0.65) !important;
-      --offline: hsla(0, 0%, 100%, 0.40) !important;
-
-      /* Mention/Reply backgrounds (pure white with very low opacity) */
-      --mention: linear-gradient(to right, hsla(0, 0%, 100%, 0.10) 66%, transparent) !important;
-      --mention-hover: linear-gradient(to right, hsla(0, 0%, 100%, 0.15) 66%, transparent) !important;
-      --reply: linear-gradient(to right, hsla(0, 0%, 100%, 0.08) 66%, transparent) !important;
-      --reply-hover: linear-gradient(to right, hsla(0, 0%, 100%, 0.12) 66%, transparent) !important;
-
-      /* Override any remaining accent colors */
-      --accent-1: hsla(0, 0%, 100%, 0.75) !important;
-      --accent-2: hsla(0, 0%, 100%, 0.70) !important;
-      --accent-3: hsla(0, 0%, 100%, 0.65) !important;
-      --accent-4: hsla(0, 0%, 100%, 0.60) !important;
-      --accent-5: hsla(0, 0%, 100%, 0.55) !important;
-      --accent-new: hsla(0, 0%, 0%, 0.50) !important;
-
-    /* Override specific SVG colors */
-    svg path {
-      stroke: hsla(0, 0%, 100%, 0.7) !important;
-      fill: hsla(0, 0%, 100%, 0.7) !important;
-
-    --transparency-tweaks: on;
-    --bg-1: hsla(220, 15%, 8%, 0.7);
-    --bg-2: hsla(220, 15%, 10%, 0.75);
-    --bg-3: hsla(220, 15%, 12%, 0.8);
-    --bg-4: hsla(220, 15%, 15%, 0.85);
-    --accent: hsl(220, 80%, 60%);
-
+      /* Reset styles meant for the original monospace font */
+      font-weight: 400; 
+      letter-spacing: normal; 
     }
-
-
-
-    /* Keep transparent backgrounds for icons that need it */
-    svg path[fill-opacity="0"] {
-      fill-opacity: 0 !important;
-    }
-
-    /* Override specific button icons */
-    .buttonChevronIcon__37e49 path {
-      fill: hsla(0, 0%, 100%, 0.7) !important;
-    }
-
-    /* Mute button and input icons */
-    button svg path,
-    .input-wrapper svg path {
-      stroke: hsla(0, 0%, 100%, 0.7) !important;
-      fill: hsla(0, 0%, 100%, 0.7) !important;
-    }
-
-    /* Keep transparent fills for outlined icons */
-    button svg path[fill="none"],
-    .input-wrapper svg path[fill="none"] {
-      fill: none !important;
-
-    }
-
-    .numberBadge__2b1f5 { background-color: white !important;
-    }
-
-    /* Track background when enabled (on) */
-    .vc-switch-checked ~ .vc-switch-slider,
-    .vc-switch-checked + .vc-switch-slider {
-        background: #23a55a !important;
-    }
-
-    /* Track background when disabled (off) */
-    .vc-switch-container:not(.vc-switch-checked) .vc-switch-slider {
-        background: #80848e !important;
-    }
-
-
   '';
 
 }

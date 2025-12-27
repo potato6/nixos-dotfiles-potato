@@ -49,7 +49,7 @@
 
             # use the kernel package set as expected by NixOS
             boot.kernelPackages =
-              pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+              pkgs.cachyosKernels.linuxPackages-cachyos-rc-lto;
 
             # Binary cache
             nix.settings.substituters =

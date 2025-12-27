@@ -37,7 +37,7 @@
 
     # Gaming
     (steam.override {
-      extraPkgs = pkgs: [ SDL2 e2fsprogs nss icu dotnet-runtime ];
+      extraPkgs = pkgs: [ SDL2 sdl3 e2fsprogs nss icu dotnet-runtime ];
     }).run
 
     # Graphics and Vulkan

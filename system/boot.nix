@@ -18,6 +18,7 @@
     };
 
     kernelParams = [
+      "split_lock_detect=off"
       "processor.ignore_ppc=1"
       "ec_sys.write_support=1"
       "tsc=reliable"
@@ -26,6 +27,7 @@
       "nmi_watchdog=0"
       "microcode.amd_sha_check=off" # ucodenix requires this
     ];
+
     kernel.sysctl = {
       "net.ipv4.conf.all.rp_filter" = 1; # Strict reverse path filtering
       "net.ipv4.conf.default.rp_filter" = 1; # Strict reverse path filtering
@@ -72,9 +74,6 @@
       # Virtual Memory - Performance Tuning
       "vm.dirty_ratio" = 10;
       "vm.dirty_background_ratio" = 5;
-
-      # Specify minimum free Kbytes at which VM pressure happens
-      "vm.min_free_kbytes" = 65536;
 
       # Strictly limits memory allocation to physical RAM + swap, preventing overcommit and reducing OOM risks.
       "vm.overcommit_memory" = 2;

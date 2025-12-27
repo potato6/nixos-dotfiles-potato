@@ -4,9 +4,7 @@
 
   environment = {
     sessionVariables = {
-      PROTONPATH =
-        # temporary jank solution
-        "/mnt/DISCO/gayming/_LIBRARIES/proton-cachyos-10.0-20251107-slr-x86_64_v3/proton-cachyos-10.0-20251107-slr-x86_64_v3/";
+      PROTONPATH = "GE-Proton";
       WINE_FULLSCREEN_FSR = 1;
       WINE_FULLSCREEN_FSR_STRENGTH =
         1; # 0 is the maximum sharpness, higher values mean less sharpening. 2 is the AMD recommended default

@@ -1,5 +1,9 @@
 { pkgs, ... }:
 with pkgs; [
+
+  rustfmt
+  rust-analyzer
+
   lldb
   clang-tools
 
@@ -25,10 +29,6 @@ with pkgs; [
   bash-language-server
   shfmt
 
-  # Docker
-  dockerfile-language-server
-  dockfmt
-
   # web
   # vscode-css-language-server vscode-eslint-language-server vscode-html-language-server
   # vscode-json-language-server vscode-markdown-language-server
@@ -39,12 +39,6 @@ with pkgs; [
   tailwindcss-language-server
   svelte-language-server
   prettier
-
-  # PostgreSQL
-  pgformatter
-
-  # Powershell
-  powershell-editor-services # powershell pkg in system/configuration.nix
 
   # Markdown
   markdown-oxide

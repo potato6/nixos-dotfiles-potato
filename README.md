@@ -1,6 +1,6 @@
 # nixos-dotfiles-🥔
 
-this is just the personal dotfiles that i use, hyprland + home manager + [DankMaterialShell
+this is just the personal dotfiles that i use, Niri + home manager + [DankMaterialShell
 ](https://github.com/AvengeMedia/DankMaterialShell);
 
 ...as a side goal with this is to optimize every aspect of the system with a similar goal to [cachyos](https://github.com/CachyOS)

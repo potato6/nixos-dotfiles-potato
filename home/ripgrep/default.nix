@@ -1,6 +1,19 @@
 { ... }: {
   programs.ripgrep = {
     enable = true;
-    arguments = [ "--iglob=!.git" ];
+    arguments = [
+      "--glob=!.git/*"
+      "--ignore-file-case-insensitive"
+      "--smart-case"
+      "--max-columns=150"
+      "--hidden"
+      "--colors=line:fg:yellow"
+      "--colors=line:style:bold"
+      "--colors=path:fg:green"
+      "--colors=path:style:bold"
+      "--colors=match:fg:black"
+      "--colors=match:bg:yellow"
+      "--colors=match:style:nobold"
+    ];
   };
 }

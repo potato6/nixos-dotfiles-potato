@@ -15,15 +15,9 @@
 
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
     };
   };
 
@@ -49,7 +43,7 @@
 
             # use the kernel package set as expected by NixOS
             boot.kernelPackages =
-              pkgs.cachyosKernels.linuxPackages-cachyos-rc-lto;
+              pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
             # Binary cache
             nix.settings.substituters =

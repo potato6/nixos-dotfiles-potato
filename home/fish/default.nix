@@ -2,6 +2,7 @@
 
   programs.fish = {
     enable = true;
+    generateCompletions = true;
     plugins = [
       {
         name = "grc";

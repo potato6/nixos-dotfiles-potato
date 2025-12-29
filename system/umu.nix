@@ -19,7 +19,7 @@
       PROTON_USE_WOW64 = 1;
       WINE_FULLSCREEN_INTEGER_SCALING = 1;
 
-      ENABLE_VKBASALT = 1;
+      ENABLE_VKBASALT = 0;
 
       WINEDLLOVERRIDES = "winhttp=n,b"; # fixes some modded games
 

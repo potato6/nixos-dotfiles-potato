@@ -10,12 +10,10 @@
       noto-fonts
       fira-code
       noto-fonts-cjk-sans
-      jetbrains-mono
       font-awesome
-      nerd-fonts.jetbrains-mono
       roboto
-      helvetica-neue-lt-std
       corefonts
+      cascadia-code
       fira
       noto-fonts-color-emoji
       fira-sans

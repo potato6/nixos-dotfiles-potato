@@ -1,34 +1,46 @@
 { pkgs, ... }: {
+
+  home.file.".config/mpv/shaders" = {
+    source = ./shaders;
+    recursive = true;
+  };
+
   programs.mpv = {
     enable = true;
+    defaultProfiles = [ "gpu-hq" ];
     config = {
+
+      glsl-shaders-append =
+        "~/.config/mpv/shaders/FSRCNNX_x2_16-0-4-1_enhance.glsl,~/.config/mpv/shaders/KrigBilateral.glsl";
+
       player-operation-mode = "pseudo-gui";
       save-position-on-quit = "yes";
       watch-later-directory = "~/.cache/mpv/watch_later";
-      ytdl-format = "bestvideo[vcodec=vp9]+bestaudio/bestvideo+bestaudio/best";
+      ytdl-format = "bestvideo+bestaudio/bestvideo+bestaudio/best";
 
-      "glsl-shaders" = "~~/shaders/FSRCNNX_x2_16-0-4-1.glsl";
-      scale = "catmull_rom";
-
-      "glsl-shader" = "~~/shaders/KrigBilateral.glsl";
+      scale = "ewa_lanczos";
+      scale-blur = "0.981251";
+      dscale = "mitchell";
       cscale = "mitchell";
 
-      vo = "gpu-next";
-      profile = "gpu-hq";
+      tscale = "box";
+      tscale-window = "sphinx";
+      tscale-radius = "1.01";
+      tscale-clamp = "0.0";
+
+      deband = false;
+      deband-iterations = 4;
+      deband-threshold = 50;
+      deband-range = 16;
+      deband-grain = 24;
+
+      vo = "gpu"; # gpu-next is problematic at the moment
       gpu-api = "vulkan";
       hwdec = "auto";
       video-sync = "display-resample";
-      tscale = "mitchell";
       interpolation = true;
-
       osd-font-size = 17;
       keep-open = true;
-
-      vulkan-async-compute = true;
-      vulkan-async-transfer = true;
-      vulkan-queue-count = 1;
-      vd-lavc-dr = true;
-
     };
 
     scripts = with pkgs.mpvScripts; [

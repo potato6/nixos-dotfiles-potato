@@ -7,7 +7,7 @@
   xdg.configFile."hypr/wallpaper".source = ./wallpapers;
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = false;
 
     systemd = {
       enable = true;
@@ -520,6 +520,7 @@
         "blur, dms:process-list-popout"
         "blur, dms:notification-popup"
         "blur, dms:notification-center-popout"
+        "blur, dms:tray-menu-window"
       ];
     };
   };

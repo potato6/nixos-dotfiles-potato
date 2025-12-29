@@ -47,9 +47,6 @@
     vulkan-tools
 
     # Desktop Environment
-    pamixer
-    pyprland
-    baobab
     qimgv
 
     # this will Generate icons for windows .exes
@@ -85,6 +82,8 @@
     nvd
     nix-prefetch
     file
+    dua
+    duperemove
 
     # Shell Customization
     fzf
@@ -99,15 +98,12 @@
 
   # USB Automounting
   services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
 
   programs = {
     nix-ld.enable = true;
     java.enable = true;
     adb.enable = true; # android tools
     # This module configures Hyprland and adds it to your user’s PATH, but does not make certain system-level changes. NixOS users should enable the NixOS module with programs.hyprland.enable, which makes system-level changes such as adding a desktop session entry.
-    hyprland = { enable = true; };
     fish.enable = true;
   };
 

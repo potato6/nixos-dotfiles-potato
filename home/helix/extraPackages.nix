@@ -3,6 +3,9 @@ with pkgs; [
 
   rustfmt
   rust-analyzer
+  clippy
+  rustc
+  cargo
 
   lldb
   clang-tools

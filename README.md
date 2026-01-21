@@ -3,11 +3,18 @@
 this is just the personal dotfiles that i use, Niri + home manager + [DankMaterialShell
 ](https://github.com/AvengeMedia/DankMaterialShell);
 
-...as a side goal with this is to optimize every aspect of the system (as long as it's stable and has all features i need)
-
 **reminders for future instalations:**
 
-there are specific optimizations in /system/storage.nix for BTRFS in SSDs and EXT4 in spinning disks, this may or may not cause a issue if you use a SSD in EXT4 or vice versa so keep that in mind.
+_SUPER + H for auto generated keybinds helper_
+
+by default niri does not validate unless you go to dms-shell config and generate the config files for the includes
+
+in ./home/niri/config/config.kdl
+
+```kdl
+include "dms/outputs.kdl"
+include "dms/colors.kdl"
+```
 
 delete the auto generated /etc/resolve.conf upon a new installation since this is using dnscrypt-proxy as a dns provider;
 

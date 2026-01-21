@@ -26,11 +26,12 @@ binds {
 
     // --- Immediate / App Launching ---
     Mod+Return { spawn "wezterm"; }
-    Mod+E { spawn-sh "dms ipc call spotlight toggle"; } // Moved from Mod+D
+    Mod+E { spawn-sh "dms ipc call spotlight toggle"; }
     Mod+I { spawn "brave"; }
     Mod+V { spawn "vesktop"; }
     Mod+T { spawn "nautilus"; }
-    Super+Return { spawn "wezterm"; }
+    Mod+M { spawn-sh "dms ipc call processlist toggle"; }
+    Mod+H { spawn-sh "dms ipc call keybinds toggle niri"; }
     
     Mod+Q repeat=false { close-window; }
     
@@ -47,10 +48,6 @@ binds {
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }

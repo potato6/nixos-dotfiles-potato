@@ -3,15 +3,13 @@
 this is just the personal dotfiles that i use, Niri + home manager + [DankMaterialShell
 ](https://github.com/AvengeMedia/DankMaterialShell);
 
-...as a side goal with this is to optimize every aspect of the system with a similar goal to [cachyos](https://github.com/CachyOS)
+...as a side goal with this is to optimize every aspect of the system (as long as it's stable and has all features i need)
 
 **reminders for future instalations:**
 
 there are specific optimizations in /system/storage.nix for BTRFS in SSDs and EXT4 in spinning disks, this may or may not cause a issue if you use a SSD in EXT4 or vice versa so keep that in mind.
 
 delete the auto generated /etc/resolve.conf upon a new installation since this is using dnscrypt-proxy as a dns provider;
-
-generate monitor.conf by using nwg-displays, then re-run nixos builder
 
 there is a bug in current wine/proton that 'right click' context menu doesn work with the env PROTON_ENABLE_WAYLAND = 1, if you are opening a non-game.
 

@@ -7,7 +7,7 @@
 
   programs.mpv = {
     enable = true;
-    defaultProfiles = [ "gpu-hq" ];
+    defaultProfiles = [ "high-quality" ];
     config = {
 
       glsl-shaders-append =
@@ -28,15 +28,15 @@
       tscale-radius = "1.01";
       tscale-clamp = "0.0";
 
-      deband = false;
+      deband = true;
       deband-iterations = 4;
-      deband-threshold = 50;
+      deband-threshold = 60;
       deband-range = 16;
-      deband-grain = 24;
+      deband-grain = 48;
 
-      vo = "gpu"; # gpu-next is problematic at the moment
+      vo = "gpu-next"; # gpu-next is problematic at the moment
       gpu-api = "vulkan";
-      hwdec = "auto";
+      hwdec = "auto-safe";
       video-sync = "display-resample";
       interpolation = true;
       osd-font-size = 17;

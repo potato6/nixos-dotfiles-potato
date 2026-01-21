@@ -5,7 +5,7 @@
       "--glob=!.git/*"
       "--ignore-file-case-insensitive"
       "--smart-case"
-      "--max-columns=150"
+      "--max-columns=0"
       "--hidden"
       "--colors=line:fg:yellow"
       "--colors=line:style:bold"

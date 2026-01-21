@@ -1,0 +1,53 @@
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 23
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
+// Startup applications
+// spawn-at-startup "waybar"
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
+
+environment {
+    //DMS_RUN_GREETER "1"
+}
+
+gestures {
+  hot-corners {
+    off
+  }
+}
+
+clipboard {
+    disable-primary
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+// screenshot-path null
+
+
+animations {
+    window-open {
+        duration-ms 150
+        curve "cubic-bezier" 0.05 0.7 0.1 1
+    }
+
+    window-close {
+        duration-ms 150
+        curve "cubic-bezier" 0.05 0.7 0.1 1
+    }   
+}
+
+xwayland-satellite {
+    // off
+    path "xwayland-satellite"
+}

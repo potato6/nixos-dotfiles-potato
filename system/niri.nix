@@ -1,10 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   programs.niri = {
     enable = true;
     package = pkgs.niri;
-
   };
+
+  #if you ever need xwayland
+  environment.systemPackages = [ pkgs.xwayland-satellite ];
 
   environment.variables = {
     CLUTTER_BACKEND = "wayland";
@@ -24,4 +27,3 @@
     NIXOS_OZONE_WL = "1";
   };
 }
-

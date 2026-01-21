@@ -4,24 +4,28 @@ let
 
   systemPath = ./system;
 
-  importAllFrom = path:
+  importAllFrom =
+    path:
     let
 
       dirContents = builtins.readDir path;
 
-      filterNixFiles = name: type:
-        type == "regular" && lib.hasSuffix ".nix" name;
+      filterNixFiles = name: type: type == "regular" && lib.hasSuffix ".nix" name;
 
       toPath = name: _: path + ("/" + name);
 
       filesToImport = lib.filterAttrs filterNixFiles dirContents;
 
-    in lib.mapAttrsToList toPath filesToImport;
+    in
+    lib.mapAttrsToList toPath filesToImport;
 
-in {
+in
+{
   # Import hardware scan + all files in ./system
-  imports = [ ./hardware-configuration.nix ./cachix.nix ]
-    ++ (importAllFrom systemPath);
+  imports = [
+    ./hardware-configuration.nix
+    ./cachix.nix
+  ]
+  ++ (importAllFrom systemPath);
 
-  system.stateVersion = "25.11"; # Example
 }

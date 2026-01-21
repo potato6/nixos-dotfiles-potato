@@ -9,11 +9,7 @@
 
       profile.release = {
         opt-level = 3;
-        panic = "abort";
-        lto = "fat";
-        strip = true;
-        codegen-units = 1;
-
+        lto = "thin";
       };
     };
   };

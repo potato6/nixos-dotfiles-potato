@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
   programs.brave = {
     enable = true;
-    package = pkgs.brave;
     dictionaries = [ pkgs.hunspellDictsChromium.en_US ];
 
     extensions = [
@@ -19,35 +19,46 @@
 
     # https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/gpu/vaapi.md
     # vulkan is just broken at the time
-
     commandLineArgs = [
+      # --- SUBJECTIVE ---
       "--enable-blink-features=MiddleClickAutoscroll"
-      "--ignore-gpu-blocklist"
-      "--disable-gpu-driver-bug-workaround"
       "--disable-smooth-scrolling"
-      "--ozone-platform-hint=auto"
+
+      # --- GPU ---
       "--use-gl=angle"
       "--use-angle=gl"
+      "--ozone-platform-hint=auto"
+
+      # --- Canvas & Performance ---
+      "--enable-gpu-rasterization" # Force GPU to paint web content
+      "--enable-oop-rasterization" # Out-of-process rasterization (Critical for heavy sites)
+      "--enable-accelerated-2d-canvas" # Hardware acceleration for <canvas> tags
+      "--enable-zero-copy" # Reduces RAM->VRAM overhead
+      "--enable-native-gpu-memory-buffers" # Bypasses slow IPC for texture sharing
+
+      # --- Feature Flags ---
       "--enable-features=${
         lib.concatStringsSep "," [
+          # Downloading
           "ParallelDownloading"
+
+          # Canvas/Rendering Optimization
+          "CanvasOopRasterization" # Moves Canvas logic off the main UI thread
+          # "RawDraw" # Reduces painting overhead (experimental but fast)
+          "UiGpuRasterization" # Renders the browser UI itself on GPU
+
+          # Video/Audio
           "VaapiVideoEncoder"
-          "PostQuantumKyber"
-          "ChromeWideEchoCancellation"
-          "DesktopScreenshots"
-          "FluentOverlayScrollbar"
-          "FluentScrollbar"
-          "EnableTabMuting"
-          "GlobalMediaControlsUpdatedUI"
-          "WaylandSessionManagement"
-          "WaylandLinuxDrmSyncObjExplicitSync"
-          "WaylandUIScaling"
-          "AcceleratedVideoEncoder"
-          "AcceleratedVideoDecodeLinuxGL"
+          "VaapiVideoDecodeLinuxGL"
           "AcceleratedVideoDecodeLinuxZeroCopyGL"
-          "VaapiIgnoreDriverChecks"
+          "ChromeWideEchoCancellation"
+
+          # Wayland/Display
+          "WaylandWindowDecorations"
+          "WaylandLinuxDrmSyncObjExplicitSync"
         ]
       }"
+
     ];
   };
 }

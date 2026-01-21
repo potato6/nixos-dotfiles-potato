@@ -19,13 +19,10 @@
         "input"
         "audio"
         "adbusers"
-        "transmission"
       ];
     };
     defaultUserShell = pkgs.fish;
   };
-  users.users.transmission.extraGroups = [ "users" ];
-
   networking.hostName = "potato";
 
   # Localization Settings

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 # NixOS Home Manager snippet that separates Vesktop-native settings from Vencord settings.
 # Vesktop native settings -> programs.vesktop.settings (written to $XDG_CONFIG_HOME/vesktop/settings.json)
@@ -8,7 +8,6 @@
 {
   programs.vesktop = {
     enable = true;
-    package = pkgs.vesktop;
 
     # Vesktop-native settings (from src/shared/settings.d.ts)
     settings = {

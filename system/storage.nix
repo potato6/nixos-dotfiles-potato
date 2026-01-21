@@ -14,7 +14,7 @@ let
     if fsConfig.fsType == "btrfs" then {
       options = [
         # Compression: Saves space and reduces the amount of data written to the SSD.
-        "compress-force=zstd:1"
+        "compress-force=zstd"
 
         # Write Reduction: Never write "access timestamps" (saves SSD life).
         "noatime"

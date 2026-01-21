@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   hardware = {
     cpu.amd.updateMicrocode = true;
     #xone.enable = true;
     amdgpu = {
       initrd.enable = true; # Fixes low res bootscreen
-      opencl.enable = false; # vulkan has better performance on Ollama
     };
     graphics = {
       enable = true;

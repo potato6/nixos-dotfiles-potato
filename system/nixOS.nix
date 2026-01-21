@@ -9,7 +9,6 @@
 
   services = {
     fstrim.enable = true; # Enable TRIM for SSD optimization
-    fwupd.enable = true; # No idea what it does
     smartd.enable = true; # Disk monitoring
   };
 
@@ -31,6 +30,10 @@
         "gccarch-x86-64-v3"
         # "gccarch-x86-64-v4"
         # "gccarch-znver4"
+      ];
+      extra-substituters = [ "https://nix-community.cachix.org" ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
   };

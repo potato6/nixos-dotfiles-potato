@@ -1,6 +1,4 @@
 {
-  description = "NixOS configuration";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -13,16 +11,16 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
-
-    dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { dankMaterialShell, nixpkgs, proton-cachyos, home-manager, ucodenix
-    , ... }@inputs: {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      ucodenix,
+      ...
+    }@inputs:
+    {
       nixosConfigurations.potato = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         # This makes `inputs` available to all modules, including home.nix
@@ -30,45 +28,51 @@
 
         modules = [
 
-          { nixpkgs.overlays = [ proton-cachyos.overlays.default ]; }
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [
+                # keep your existing shim overlay
+                (final: prev: {
+                  cachyosKernels = inputs.nix-cachyos-kernel.legacyPackages."${final.stdenv.hostPlatform.system}";
+                })
+              ];
 
-          ({ pkgs, ... }: {
-            nixpkgs.overlays = [
-              # shim that behaves like overlays.pinned: use the flake's legacyPackages
-              (final: prev: {
-                cachyosKernels =
-                  inputs.nix-cachyos-kernel.legacyPackages."${final.stdenv.hostPlatform.system}";
-              })
-            ];
+              boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
-            # use the kernel package set as expected by NixOS
-            boot.kernelPackages =
-              pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
-
-            # Binary cache
-            nix.settings.substituters =
-              [ "https://attic.xuyh0120.win/lantian" ];
-            nix.settings.trusted-public-keys =
-              [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
-          })
+              # Binary cache
+              nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
+              nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+            }
+          )
 
           home-manager.nixosModules.home-manager
           {
+
+            systemd.user.services.niri-flake-polkit.enable = true;
+            system.stateVersion = "26.05";
+
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.potato = {
               imports = [
-                ./home.nix
                 ./home
-                dankMaterialShell.homeModules.dank-material-shell
               ];
+
+              home = {
+                username = "potato";
+                homeDirectory = "/home/potato";
+                stateVersion = "26.05";
+                shell.enableFishIntegration = true;
+              };
+
+              programs.home-manager.enable = true;
             };
           }
 
           {
             imports = [ ucodenix.nixosModules.default ];
             services.ucodenix.enable = true;
-
           }
 
           ./configuration.nix

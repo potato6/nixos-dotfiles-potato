@@ -20,8 +20,11 @@
     util-linux
     peazip
     ffmpeg
-    nwg-displays
     exiftool
+    gemini-cli-bin
+    nautilus
+    ffmpegthumbnailer
+    gst_all_1.gst-plugins-rs
 
     # Nix Tools
     nodePackages_latest.nodejs
@@ -34,11 +37,10 @@
     obs-studio
     playerctl
     sound-theme-freedesktop
+    shotcut
 
     # Gaming
-    (steam.override {
-      extraPkgs = pkgs: [ SDL2 sdl3 e2fsprogs nss icu dotnet-runtime ];
-    }).run
+    steam.run
 
     # Graphics and Vulkan
     lact
@@ -94,16 +96,21 @@
     fd # find replacer
     grc # Generic text colouriser
     fzf
+    gnome-disk-utility
+    ghidra-bin
   ];
 
-  # USB Automounting
+  programs.gamescope.enable = true;
+
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "wezterm";
+  };
+
   services.gvfs.enable = true;
 
   programs = {
     nix-ld.enable = true;
-    java.enable = true;
-    adb.enable = true; # android tools
-    # This module configures Hyprland and adds it to your user’s PATH, but does not make certain system-level changes. NixOS users should enable the NixOS module with programs.hyprland.enable, which makes system-level changes such as adding a desktop session entry.
     fish.enable = true;
   };
 

@@ -5,7 +5,7 @@
     defaultEditor = true;
 
     settings = {
-      theme = "catppuccin_mocha_transparent";
+      theme = "base16_transparent";
       editor = {
         # scrollPastEnd = true;
         text-width = 80;

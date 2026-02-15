@@ -21,10 +21,11 @@
     peazip
     ffmpeg
     exiftool
-    gemini-cli-bin
     nautilus
     ffmpegthumbnailer
-    gst_all_1.gst-plugins-rs
+    codex
+    gemini-cli-bin
+    antigravity-fhs
 
     # Nix Tools
     nodePackages_latest.nodejs
@@ -47,6 +48,10 @@
     libva-utils
     clinfo
     vulkan-tools
+    mesa-demos
+    pciutils
+    rocmPackages.rocminfo
+    rocmPackages.rocm-smi
 
     # Desktop Environment
     qimgv
@@ -97,10 +102,7 @@
     grc # Generic text colouriser
     fzf
     gnome-disk-utility
-    ghidra-bin
   ];
-
-  programs.gamescope.enable = true;
 
   programs.nautilus-open-any-terminal = {
     enable = true;

@@ -19,6 +19,10 @@
       PROTON_USE_WOW64 = 1;
       WINE_FULLSCREEN_INTEGER_SCALING = 1;
       PROTON_NO_WM_DECORATION = 1;
+      PROTON_FORCE_LARGE_ADRESS_AWARE = 1;
+      STAGING_SHARED_MEMORY = 1;
+      HEAP_DELAY_FREE = 1;
+      PROTON_PRIORITY_HIGH = 1;
 
       #ENABLE_VKBASALT = 1;
 
@@ -33,7 +37,6 @@
       umu-launcher
       goverlay
       mangohud
-      vkbasalt
       winetricks
     ];
   };

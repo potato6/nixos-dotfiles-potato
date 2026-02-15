@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   programs. # Yet another nixos helper
   nh = {
@@ -19,17 +20,9 @@
       fallback = true;
       connect-timeout = 1;
       auto-optimise-store = true; # Automatically optimize the Nix store
-      experimental-features = [ "nix-command" "flakes" ];
-      system-features = [
-        # Defaults
-        "big-parallel"
-        "benchmark"
-        "kvm"
-        "nixos-test"
-        # Additional
-        "gccarch-x86-64-v3"
-        # "gccarch-x86-64-v4"
-        # "gccarch-znver4"
+      experimental-features = [
+        "nix-command"
+        "flakes"
       ];
       extra-substituters = [ "https://nix-community.cachix.org" ];
       extra-trusted-public-keys = [

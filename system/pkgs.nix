@@ -2,63 +2,93 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # System Utilities
+    # Core CLI and file tools
+    util-linux
+    file
+    killall
+    uutils-coreutils-noprefix
+    fd
+    grc
+    fzf
+    micro
+
+    # Archives and compression
+    zip
+    unzip
+    unrar
+    p7zip-rar
+    lz4
+    xarchiver
+    peazip
+
+    # Dev toolchain
     clang
     cargo
     rustc
-    gearlever
-    lsfg-vk-ui
-    lsfg-vk
-    unrar
-    zip
-    p7zip-rar
-    lz4
-    unzip
-    xarchiver
-    killall
-    cachix
-    util-linux
-    peazip
-    ffmpeg
-    exiftool
-    nautilus
-    ffmpegthumbnailer
-    codex
-    gemini-cli-bin
-    antigravity-fhs
-
-    # Nix Tools
     nodePackages_latest.nodejs
+
+    # Nix tooling
+    cachix
     nixd
     nil
-    s-tui
     nix-index
+    nix-prefetch
 
-    # Multimedia
+    # Media and graphics
+    ffmpeg
+    ffmpegthumbnailer
+    exiftool
     obs-studio
+    shotcut
+    qimgv
     playerctl
     sound-theme-freedesktop
-    shotcut
 
     # Gaming
     steam.run
+    lsfg-vk
+    lsfg-vk-ui
 
-    # Graphics and Vulkan
+    # GPU / Vulkan / ROCm
     lact
     libva-utils
     clinfo
     vulkan-tools
     mesa-demos
     pciutils
-    rocmPackages.rocminfo
-    rocmPackages.rocm-smi
 
-    # Desktop Environment
-    qimgv
+    # Desktop integration
+    nautilus
+    gnome-disk-utility
+    gearlever
 
-    # this will Generate icons for windows .exes
-    icoextract
-    # thumbnailer file manually to ensure it's registered
+    # Monitoring and system info
+    btop
+    htop
+    s-tui
+    kmon
+    nvtopPackages.amd
+    duf
+    dua
+    duperemove
+    neofetch
+    ipfetch
+    cpufetch
+    ramfetch
+    speedtest-rs
+
+    # Apps
+    qalculate-qt
+    keepassxc
+    mcomix
+
+    # Misc
+    codex
+    gemini-cli-bin
+    antigravity-fhs
+    nvd
+
+    # Register .exe thumbnailer with Nautilus
     (writeTextFile {
       name = "icoextract-thumbnailer";
       destination = "/share/thumbnailers/exe.thumbnailer";
@@ -68,40 +98,7 @@
         MimeType=application/x-ms-dos-executable;application/x-msdownload;application/exe;application/x-exe;application/dos-exe;vms/exe;application/x-wine-extension-exe;application/msi;application/x-msi;application/x-wine-extension-msi;application/x-ms-shortcut;
       '';
     })
-
-    # Applications
-    qalculate-qt
-    keepassxc
-    mcomix
-
-    # System Management
-    btop
-    neofetch
-    ipfetch
-    cpufetch
-    ramfetch
-    htop
-    btop
-    kmon
-    speedtest-rs
-    nvtopPackages.amd
-    duf
-    nvd
-    nix-prefetch
-    file
-    dua
-    duperemove
-
-    # Shell Customization
-    fzf
-    micro
-
-    # libraries
-    uutils-coreutils-noprefix # coreutils rewrite
-    fd # find replacer
-    grc # Generic text colouriser
-    fzf
-    gnome-disk-utility
+    icoextract
   ];
 
   programs.nautilus-open-any-terminal = {

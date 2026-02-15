@@ -9,7 +9,6 @@
   services.journald.extraConfig = ''
     SystemMaxUse=50M
     MaxUse=1G
-    DefaultTimeoutStopSec=10s
   '';
 
   systemd.services."user@".serviceConfig = {

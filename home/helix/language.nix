@@ -55,7 +55,7 @@ in
 
     ruff-lsp = {
       command = "ruff";
-      agrs = [ "server" ];
+      args = [ "server" ];
     };
 
     svelte-ls = {
@@ -120,7 +120,6 @@ in
       name = "rust";
       language-servers = [
         "rust-analyzer"
-        "gpt"
       ];
       scope = "source.rust";
       file-types = [ "rs" ];

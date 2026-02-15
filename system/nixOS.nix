@@ -1,8 +1,7 @@
 { ... }:
 {
 
-  programs. # Yet another nixos helper
-  nh = {
+  programs.nh = { # Yet another nixos helper
     enable = true;
     clean.enable = true;
     flake = "/etc/nixos/";

@@ -50,47 +50,14 @@
           nix-gaming-edge.nixosModules.default
 
           (
-            { pkgs, ... }:
+            { ... }:
             {
               nixpkgs.overlays = [
-
                 nix-gaming-edge.overlays.default
                 nix-gaming-edge.overlays.mesa-git
                 nix-gaming-edge.overlays.proton-cachyos
-                #nix-gaming-edge.overlays.vintagestory
-                #etc.
               ];
-
-              drivers.mesa-git = {
-                enable = true;
-                cacheCleanup = {
-                  # protonPackage is null by default - thus Proton caches are not cleaned by default. Must define a protonPackage to clear Proton / engine caches
-                  enable = true;
-                  protonPackage = pkgs.proton-cachyos; # or variation
-
-                  mesaCacheDirs = [
-                    # optional - default lists pre-configured
-                    "mesa_shader_cache*"
-                    "radv_builtin_shaders*"
-                    #etc.
-                  ];
-
-                  protonCacheFiles = [
-                    # optional - default lists pre-configured
-                    "vkd3d-proton.cache*"
-                    "shader*.cache"
-                    #etc.
-                  ];
-
-                  protonCacheDirs = [
-                    # optional - default lists pre-configured
-                    "*ShaderCache*"
-                    "D3DSCache*"
-                    #etc.
-                  ];
-                };
-              };
-
+              drivers.mesa-git.enable = true;
             }
           )
 

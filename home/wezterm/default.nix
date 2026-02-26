@@ -41,7 +41,7 @@
       	font = wezterm.font("JetBrains Mono", { weight = "Medium" }),
       	font_size = 13,
       	color_scheme = "Ayu Dark",
-      	window_background_opacity = 0.9,
+      	window_background_opacity = 0.8,
       	front_end = "WebGpu",
       	quote_dropped_files = "SpacesOnly",
       	webgpu_preferred_adapter = wezterm.gui.enumerate_gpus()[1],

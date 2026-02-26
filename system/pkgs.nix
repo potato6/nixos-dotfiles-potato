@@ -39,10 +39,10 @@
     ffmpegthumbnailer
     exiftool
     obs-studio
-    shotcut
     qimgv
     playerctl
     sound-theme-freedesktop
+    kdePackages.kdenlive
 
     # Gaming
     steam.run
@@ -60,7 +60,6 @@
     # Desktop integration
     nautilus
     gnome-disk-utility
-    gearlever
 
     # Monitoring and system info
     btop
@@ -83,6 +82,7 @@
     mcomix
 
     # Misc
+    ollama-vulkan
     codex
     gemini-cli-bin
     antigravity-fhs

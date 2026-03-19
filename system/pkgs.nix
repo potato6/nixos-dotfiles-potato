@@ -25,7 +25,7 @@
     clang
     cargo
     rustc
-    nodePackages_latest.nodejs
+    nodejs-slim
 
     # Nix tooling
     cachix
@@ -43,6 +43,7 @@
     playerctl
     sound-theme-freedesktop
     kdePackages.kdenlive
+    obs-studio
 
     # Gaming
     steam.run
@@ -69,12 +70,12 @@
     nvtopPackages.amd
     duf
     dua
-    duperemove
-    neofetch
     ipfetch
     cpufetch
     ramfetch
     speedtest-rs
+    zenmonitor
+    kdePackages.filelight
 
     # Apps
     qalculate-qt
@@ -83,7 +84,6 @@
 
     # Misc
     ollama-vulkan
-    codex
     gemini-cli-bin
     antigravity-fhs
     nvd

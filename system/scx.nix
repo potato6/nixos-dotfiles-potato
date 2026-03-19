@@ -6,9 +6,15 @@
     scheduler = "scx_bpfland";
     extraArgs = [
       "--local-kthreads"
+      "--cpufreq"
     ];
   };
 
-  boot.kernelParams = [ "amd_pstate=active" ];
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "schedutil";
+  };
+
+  boot.kernelParams = [ "amd_pstate=guided" ];
 
 }

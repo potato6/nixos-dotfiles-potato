@@ -11,10 +11,7 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    nix-gaming-edge = {
-      url = "github:powerofthe69/nix-gaming-edge";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-gaming-edge.url = "github:powerofthe69/nix-gaming-edge";
 
   };
 
@@ -37,6 +34,7 @@
       home-manager,
       ucodenix,
       nix-gaming-edge,
+      nix-cachyos-kernel,
       ...
     }@inputs:
     {
@@ -64,13 +62,9 @@
           (
             { pkgs, ... }:
             {
-              nixpkgs.overlays = [
-                # keep your existing shim overlay
-                (final: prev: {
-                  cachyosKernels = inputs.nix-cachyos-kernel.legacyPackages."${final.stdenv.hostPlatform.system}";
-                })
-              ];
+              nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
 
+              # Notice the "linuxPackages-" prefix here
               boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
               # Binary cache

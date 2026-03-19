@@ -58,8 +58,7 @@
         useQuickCss = true;
 
         # themeLinks and enabledThemes are Vencord settings
-        themeLinks =
-          [ "https://refact0r.github.io/system24/build/system24.css" ];
+        themeLinks = [ "https://refact0r.github.io/system24/build/system24.css" ];
         enabledThemes = [ "system24.css" ];
 
         enableReactDevtools = false;
@@ -73,19 +72,45 @@
         # plugins: paste your Vencord plugin map here (if you have one)
         plugins = {
 
-          ChatInputButtonAPI = { enabled = true; };
-          CommandsAPI = { enabled = true; };
-          MemberListDecoratorsAPI = { enabled = false; };
-          MessageAccessoriesAPI = { enabled = true; };
-          MessageDecorationsAPI = { enabled = false; };
-          MessageEventsAPI = { enabled = true; };
-          MessagePopoverAPI = { enabled = false; };
-          MessageUpdaterAPI = { enabled = false; };
-          ServerListAPI = { enabled = false; };
-          UserSettingsAPI = { enabled = true; };
-          AccountPanelServerProfile = { enabled = false; };
-          AlwaysAnimate = { enabled = false; };
-          AlwaysExpandRoles = { enabled = false; };
+          ChatInputButtonAPI = {
+            enabled = true;
+          };
+          CommandsAPI = {
+            enabled = true;
+          };
+          MemberListDecoratorsAPI = {
+            enabled = false;
+          };
+          MessageAccessoriesAPI = {
+            enabled = true;
+          };
+          MessageDecorationsAPI = {
+            enabled = false;
+          };
+          MessageEventsAPI = {
+            enabled = true;
+          };
+          MessagePopoverAPI = {
+            enabled = false;
+          };
+          MessageUpdaterAPI = {
+            enabled = false;
+          };
+          ServerListAPI = {
+            enabled = false;
+          };
+          UserSettingsAPI = {
+            enabled = true;
+          };
+          AccountPanelServerProfile = {
+            enabled = false;
+          };
+          AlwaysAnimate = {
+            enabled = false;
+          };
+          AlwaysExpandRoles = {
+            enabled = false;
+          };
           AlwaysTrust = {
             enabled = true;
             domain = true;
@@ -97,40 +122,108 @@
             method = 0;
             randomisedLength = 7;
           };
-          AppleMusicRichPresence = { enabled = false; };
-          "WebRichPresence (arRPC)" = { enabled = false; };
-          BANger = { enabled = false; };
-          BetterFolders = { enabled = true; };
-          BetterGifAltText = { enabled = true; };
-          BetterGifPicker = { enabled = true; };
-          BetterNotesBox = { enabled = true; };
-          BetterRoleContext = { enabled = true; };
-          BetterRoleDot = { enabled = true; };
-          BetterSessions = { enabled = false; };
-          BetterSettings = { enabled = true; };
-          BetterUploadButton = { enabled = true; };
-          BiggerStreamPreview = { enabled = true; };
-          BlurNSFW = { enabled = false; };
-          CallTimer = { enabled = true; };
-          ClearURLs = { enabled = true; };
-          ClientTheme = { enabled = false; };
-          ColorSighted = { enabled = false; };
-          ConsoleJanitor = { enabled = false; };
-          ConsoleShortcuts = { enabled = false; };
-          CopyEmojiMarkdown = { enabled = false; };
-          CopyFileContents = { enabled = true; };
-          CopyUserURLs = { enabled = true; };
-          CrashHandler = { enabled = true; };
-          CtrlEnterSend = { enabled = false; };
-          CustomRPC = { enabled = false; };
-          CustomIdle = { enabled = false; };
-          Dearrow = { enabled = false; };
-          Decor = { enabled = false; };
-          DisableCallIdle = { enabled = false; };
-          DontRoundMyTimestamps = { enabled = false; };
-          EmoteCloner = { enabled = false; };
-          Experiments = { enabled = true; };
-          F8Break = { enabled = false; };
+          AppleMusicRichPresence = {
+            enabled = false;
+          };
+          "WebRichPresence (arRPC)" = {
+            enabled = false;
+          };
+          BANger = {
+            enabled = false;
+          };
+          BetterFolders = {
+            enabled = true;
+          };
+          BetterGifAltText = {
+            enabled = true;
+          };
+          BetterGifPicker = {
+            enabled = true;
+          };
+          BetterNotesBox = {
+            enabled = true;
+          };
+          BetterRoleContext = {
+            enabled = true;
+          };
+          BetterRoleDot = {
+            enabled = true;
+          };
+          BetterSessions = {
+            enabled = false;
+          };
+          BetterSettings = {
+            enabled = true;
+          };
+          BetterUploadButton = {
+            enabled = true;
+          };
+          BiggerStreamPreview = {
+            enabled = true;
+          };
+          BlurNSFW = {
+            enabled = false;
+          };
+          CallTimer = {
+            enabled = true;
+          };
+          ClearURLs = {
+            enabled = true;
+          };
+          ClientTheme = {
+            enabled = false;
+          };
+          ColorSighted = {
+            enabled = false;
+          };
+          ConsoleJanitor = {
+            enabled = false;
+          };
+          ConsoleShortcuts = {
+            enabled = false;
+          };
+          CopyEmojiMarkdown = {
+            enabled = false;
+          };
+          CopyFileContents = {
+            enabled = true;
+          };
+          CopyUserURLs = {
+            enabled = true;
+          };
+          CrashHandler = {
+            enabled = true;
+          };
+          CtrlEnterSend = {
+            enabled = false;
+          };
+          CustomRPC = {
+            enabled = false;
+          };
+          CustomIdle = {
+            enabled = false;
+          };
+          Dearrow = {
+            enabled = false;
+          };
+          Decor = {
+            enabled = false;
+          };
+          DisableCallIdle = {
+            enabled = false;
+          };
+          DontRoundMyTimestamps = {
+            enabled = false;
+          };
+          EmoteCloner = {
+            enabled = false;
+          };
+          Experiments = {
+            enabled = true;
+          };
+          F8Break = {
+            enabled = false;
+          };
           FakeNitro = {
             enabled = false;
             enableEmojiBypass = false;
@@ -145,150 +238,393 @@
             hyperLinkText = "{{NAME}}";
             disableEmbedPermissionCheck = false;
           };
-          FakeProfileThemes = { enabled = false; };
-          FavoriteEmojiFirst = { enabled = false; };
-          FavoriteGifSearch = { enabled = true; };
-          FixCodeblockGap = { enabled = true; };
-          FixSpotifyEmbeds = { enabled = false; };
-          FixYoutubeEmbeds = { enabled = true; };
-          ForceOwnerCrown = { enabled = true; };
-          FriendInvites = { enabled = false; };
-          FriendsSince = { enabled = true; };
-          FullSearchContext = { enabled = false; };
-          GameActivityToggle = { enabled = false; };
-          GifPaste = { enabled = true; };
-          GreetStickerPicker = { enabled = true; };
-          HideAttachments = { enabled = false; };
-          iLoveSpam = { enabled = false; };
-          IgnoreActivities = { enabled = false; };
-          ImageLink = { enabled = false; };
-          ImageZoom = { enabled = false; };
+          FakeProfileThemes = {
+            enabled = false;
+          };
+          FavoriteEmojiFirst = {
+            enabled = false;
+          };
+          FavoriteGifSearch = {
+            enabled = true;
+          };
+          FixCodeblockGap = {
+            enabled = true;
+          };
+          FixSpotifyEmbeds = {
+            enabled = false;
+          };
+          FixYoutubeEmbeds = {
+            enabled = true;
+          };
+          ForceOwnerCrown = {
+            enabled = true;
+          };
+          FriendInvites = {
+            enabled = false;
+          };
+          FriendsSince = {
+            enabled = true;
+          };
+          FullSearchContext = {
+            enabled = false;
+          };
+          GameActivityToggle = {
+            enabled = false;
+          };
+          GifPaste = {
+            enabled = true;
+          };
+          GreetStickerPicker = {
+            enabled = true;
+          };
+          HideAttachments = {
+            enabled = false;
+          };
+          iLoveSpam = {
+            enabled = false;
+          };
+          IgnoreActivities = {
+            enabled = false;
+          };
+          ImageLink = {
+            enabled = false;
+          };
+          ImageZoom = {
+            enabled = false;
+          };
 
-          ImageFilename = { enabled = true; };
+          ImageFilename = {
+            enabled = true;
+          };
 
-          ImplicitRelationships = { enabled = true; };
-          InvisibleChat = { enabled = false; };
-          KeepCurrentChannel = { enabled = false; };
-          LastFMRichPresence = { enabled = false; };
-          LoadingQuotes = { enabled = false; };
+          ImplicitRelationships = {
+            enabled = true;
+          };
+          InvisibleChat = {
+            enabled = false;
+          };
+          KeepCurrentChannel = {
+            enabled = false;
+          };
+          LastFMRichPresence = {
+            enabled = false;
+          };
+          LoadingQuotes = {
+            enabled = false;
+          };
           MemberCount = {
             enabled = true;
             memberList = true;
             toolTip = true;
           };
-          MentionAvatars = { enabled = false; };
-          MessageClickActions = { enabled = true; };
-          MessageLatency = { enabled = false; };
-          MessageLinkEmbeds = { enabled = false; };
-          MessageLogger = { enabled = false; };
-          MessageTags = { enabled = true; };
-          MoreCommands = { enabled = false; };
-          MoreKaomoji = { enabled = true; };
-          MoreUserTags = { enabled = false; };
-          Moyai = { enabled = false; };
+          MentionAvatars = {
+            enabled = false;
+          };
+          MessageClickActions = {
+            enabled = true;
+          };
+          MessageLatency = {
+            enabled = false;
+          };
+          MessageLinkEmbeds = {
+            enabled = false;
+          };
+          MessageLogger = {
+            enabled = false;
+          };
+          MessageTags = {
+            enabled = true;
+          };
+          MoreCommands = {
+            enabled = false;
+          };
+          MoreKaomoji = {
+            enabled = true;
+          };
+          MoreUserTags = {
+            enabled = false;
+          };
+          Moyai = {
+            enabled = false;
+          };
           MutalGroupDMs = {
             enabled = false;
           }; # typo-safe placeholder (original JSON has "MutualGroupDMs")
-          MutualGroupDMs = { enabled = false; };
-          NewGuildSettings = { enabled = false; };
-          NoBlockedMessages = { enabled = false; };
-          NoDevtoolsWarning = { enabled = false; };
-          NoF1 = { enabled = true; };
-          NoMaskedUrlPaste = { enabled = false; };
-          NoMosaic = { enabled = false; };
-          NoOnboardingDelay = { enabled = true; };
-          NoPendingCount = { enabled = false; };
-          NoProfileThemes = { enabled = false; };
-          NoReplyMention = { enabled = false; };
-          NoScreensharePreview = { enabled = false; };
-          NoServerEmojis = { enabled = true; };
-          NoTypingAnimation = { enabled = true; };
-          NoUnblockToJump = { enabled = false; };
-          NormalizeMessageLinks = { enabled = false; };
-          NotificationVolume = { enabled = false; };
-          NSFWGateBypass = { enabled = true; };
-          OnePingPerDM = { enabled = false; };
-          oneko = { enabled = false; };
-          OpenInApp = { enabled = false; };
-          OverrideForumDefaults = { enabled = false; };
-          PartyMode = { enabled = false; };
-          PauseInvitesForever = { enabled = false; };
-          PermissionFreeWill = { enabled = true; };
-          PermissionsViewer = { enabled = true; };
-          petpet = { enabled = true; };
-          PictureInPicture = { enabled = false; };
-          PinDMs = { enabled = false; };
-          PlainFolderIcon = { enabled = true; };
-          PlatformIndicators = { enabled = true; };
-          PreviewMessage = { enabled = true; };
-          QuickMention = { enabled = false; };
-          QuickReply = { enabled = false; };
-          ReactErrorDecoder = { enabled = false; };
-          ReadAllNotificationsButton = { enabled = false; };
-          RelationshipNotifier = { enabled = true; };
-          ReplaceGoogleSearch = { enabled = false; };
-          ReplyTimestamp = { enabled = false; };
-          RevealAllSpoilers = { enabled = false; };
-          ReverseImageSearch = { enabled = true; };
-          ReviewDB = { enabled = false; };
-          RoleColorEverywhere = { enabled = false; };
-          SecretRingToneEnabler = { enabled = false; };
-          Summaries = { enabled = true; };
+          MutualGroupDMs = {
+            enabled = false;
+          };
+          NewGuildSettings = {
+            enabled = false;
+          };
+          NoBlockedMessages = {
+            enabled = false;
+          };
+          NoDevtoolsWarning = {
+            enabled = false;
+          };
+          NoF1 = {
+            enabled = true;
+          };
+          NoMaskedUrlPaste = {
+            enabled = false;
+          };
+          NoMosaic = {
+            enabled = false;
+          };
+          NoOnboardingDelay = {
+            enabled = true;
+          };
+          NoPendingCount = {
+            enabled = false;
+          };
+          NoProfileThemes = {
+            enabled = true;
+          };
+          NoReplyMention = {
+            enabled = false;
+          };
+          NoScreensharePreview = {
+            enabled = false;
+          };
+          NoServerEmojis = {
+            enabled = true;
+          };
+          NoTypingAnimation = {
+            enabled = true;
+          };
+          NoUnblockToJump = {
+            enabled = false;
+          };
+          NormalizeMessageLinks = {
+            enabled = false;
+          };
+          NotificationVolume = {
+            enabled = false;
+          };
+          NSFWGateBypass = {
+            enabled = true;
+          };
+          OnePingPerDM = {
+            enabled = false;
+          };
+          oneko = {
+            enabled = false;
+          };
+          OpenInApp = {
+            enabled = false;
+          };
+          OverrideForumDefaults = {
+            enabled = false;
+          };
+          PartyMode = {
+            enabled = false;
+          };
+          PauseInvitesForever = {
+            enabled = false;
+          };
+          PermissionFreeWill = {
+            enabled = true;
+          };
+          PermissionsViewer = {
+            enabled = true;
+          };
+          petpet = {
+            enabled = true;
+          };
+          PictureInPicture = {
+            enabled = false;
+          };
+          PinDMs = {
+            enabled = false;
+          };
+          PlainFolderIcon = {
+            enabled = true;
+          };
+          PlatformIndicators = {
+            enabled = true;
+          };
+          PreviewMessage = {
+            enabled = true;
+          };
+          QuickMention = {
+            enabled = false;
+          };
+          QuickReply = {
+            enabled = false;
+          };
+          ReactErrorDecoder = {
+            enabled = false;
+          };
+          ReadAllNotificationsButton = {
+            enabled = false;
+          };
+          RelationshipNotifier = {
+            enabled = true;
+          };
+          ReplaceGoogleSearch = {
+            enabled = false;
+          };
+          ReplyTimestamp = {
+            enabled = false;
+          };
+          RevealAllSpoilers = {
+            enabled = false;
+          };
+          ReverseImageSearch = {
+            enabled = true;
+          };
+          ReviewDB = {
+            enabled = false;
+          };
+          RoleColorEverywhere = {
+            enabled = false;
+          };
+          SecretRingToneEnabler = {
+            enabled = false;
+          };
+          Summaries = {
+            enabled = true;
+          };
           SendTimestamps = {
             enabled = true;
             replaceMessageContents = true;
           };
-          ServerInfo = { enabled = true; };
-          ServerListIndicators = { enabled = true; };
+          ServerInfo = {
+            enabled = true;
+          };
+          ServerListIndicators = {
+            enabled = true;
+          };
           ShikiCodeblocks = {
             enabled = true;
             useDevIcon = "COLOR";
-            theme =
-              "https://raw.githubusercontent.com/shikijs/shiki/0b28ad8ccfbf2615f2d9d38ea8255416b8ac3043/packages/shiki/themes/dracula.json";
+            theme = "https://raw.githubusercontent.com/shikijs/shiki/0b28ad8ccfbf2615f2d9d38ea8255416b8ac3043/packages/shiki/themes/dracula.json";
             tryHljs = "SECONDARY";
             bgOpacity = 100;
           };
-          ShowAllMessageButtons = { enabled = false; };
-          ShowConnections = { enabled = true; };
-          ShowHiddenChannels = { enabled = true; };
-          ShowHiddenThings = { enabled = true; };
-          ShowMeYourName = { enabled = false; };
-          ShowTimeoutDuration = { enabled = false; };
-          SilentMessageToggle = { enabled = false; };
-          SilentTyping = { enabled = false; };
-          SortFriendRequests = { enabled = false; };
-          SpotifyControls = { enabled = false; };
-          SpotifyCrack = { enabled = false; };
-          SpotifyShareCommands = { enabled = false; };
-          StartupTimings = { enabled = false; };
-          StickerPaste = { enabled = true; };
-          StreamerModeOnStream = { enabled = false; };
-          SuperReactionTweaks = { enabled = true; };
-          TextReplace = { enabled = false; };
-          ThemeAttributes = { enabled = false; };
-          Translate = { enabled = false; };
-          TypingIndicator = { enabled = false; };
-          TypingTweaks = { enabled = true; };
-          Unindent = { enabled = false; };
-          UnlockedAvatarZoom = { enabled = false; };
-          UnsuppressEmbeds = { enabled = false; };
-          UserVoiceShow = { enabled = false; };
-          USRBG = { enabled = false; };
-          ValidReply = { enabled = true; };
-          ValidUser = { enabled = true; };
-          VoiceChatDoubleClick = { enabled = false; };
-          VcNarrator = { enabled = false; };
-          VencordToolbox = { enabled = false; };
-          ViewIcons = { enabled = true; };
-          ViewRaw = { enabled = true; };
-          VoiceDownload = { enabled = false; };
-          VoiceMessages = { enabled = false; };
-          VolumeBooster = { enabled = false; };
-          WebKeybinds = { enabled = true; };
-          WebScreenShareFixes = { enabled = true; };
-          WhoReacted = { enabled = true; };
-          XSOverlay = { enabled = false; };
-          YoutubeAdblock = { enabled = true; };
+          ShowAllMessageButtons = {
+            enabled = false;
+          };
+          ShowConnections = {
+            enabled = true;
+          };
+          ShowHiddenChannels = {
+            enabled = true;
+          };
+          ShowHiddenThings = {
+            enabled = true;
+          };
+          ShowMeYourName = {
+            enabled = false;
+          };
+          ShowTimeoutDuration = {
+            enabled = false;
+          };
+          SilentMessageToggle = {
+            enabled = false;
+          };
+          SilentTyping = {
+            enabled = false;
+          };
+          SortFriendRequests = {
+            enabled = false;
+          };
+          SpotifyControls = {
+            enabled = false;
+          };
+          SpotifyCrack = {
+            enabled = false;
+          };
+          SpotifyShareCommands = {
+            enabled = false;
+          };
+          StartupTimings = {
+            enabled = false;
+          };
+          StickerPaste = {
+            enabled = true;
+          };
+          StreamerModeOnStream = {
+            enabled = false;
+          };
+          SuperReactionTweaks = {
+            enabled = true;
+          };
+          TextReplace = {
+            enabled = false;
+          };
+          ThemeAttributes = {
+            enabled = false;
+          };
+          Translate = {
+            enabled = false;
+          };
+          TypingIndicator = {
+            enabled = false;
+          };
+          TypingTweaks = {
+            enabled = true;
+          };
+          Unindent = {
+            enabled = false;
+          };
+          UnlockedAvatarZoom = {
+            enabled = false;
+          };
+          UnsuppressEmbeds = {
+            enabled = false;
+          };
+          UserVoiceShow = {
+            enabled = false;
+          };
+          USRBG = {
+            enabled = false;
+          };
+          ValidReply = {
+            enabled = true;
+          };
+          ValidUser = {
+            enabled = true;
+          };
+          VoiceChatDoubleClick = {
+            enabled = false;
+          };
+          VcNarrator = {
+            enabled = false;
+          };
+          VencordToolbox = {
+            enabled = false;
+          };
+          ViewIcons = {
+            enabled = true;
+          };
+          ViewRaw = {
+            enabled = true;
+          };
+          VoiceDownload = {
+            enabled = false;
+          };
+          VoiceMessages = {
+            enabled = false;
+          };
+          VolumeBooster = {
+            enabled = false;
+          };
+          WebKeybinds = {
+            enabled = true;
+          };
+          WebScreenShareFixes = {
+            enabled = true;
+          };
+          WhoReacted = {
+            enabled = true;
+          };
+          XSOverlay = {
+            enabled = false;
+          };
+          YoutubeAdblock = {
+            enabled = true;
+          };
           NoTrack = {
             enabled = true;
             disableAnalytics = true;
@@ -301,7 +637,9 @@
             enabled = true;
             settingsLocation = "aboveNitro";
           };
-          SupportHelper = { enabled = true; };
+          SupportHelper = {
+            enabled = true;
+          };
           UserMessagesPronouns = {
             enabled = true;
             showInMessages = true;
@@ -309,8 +647,12 @@
             pronounSource = 0;
             pronounsFormat = "LOWERCASE";
           };
-          DynamicImageModalAPI = { enabled = false; };
-          FixImagesQuality = { enabled = true; };
+          DynamicImageModalAPI = {
+            enabled = false;
+          };
+          FixImagesQuality = {
+            enabled = true;
+          };
         };
 
         notifications = {

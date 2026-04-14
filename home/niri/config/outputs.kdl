@@ -1,0 +1,13 @@
+// Output configuration
+// Run `niri msg outputs` to list outputs.
+
+output "DP-1" {
+    scale 1.0
+    position x=2208 y=157
+}
+
+output "DP-2" {
+    scale 1.0
+    position x=3648 y=0
+    transform "270"
+}

@@ -1,0 +1,134 @@
+// Window rules
+
+// Games: Variable Refresh Rate (closest equivalent to "immediate")
+window-rule {
+    match app-id="gamescope"
+    match app-id="steam_app_default"
+    match app-id="onion.torzu_emu.torzu"
+    variable-refresh-rate true
+    open-floating true
+}
+
+// Work around WezTerm's initial configure bug
+window-rule {
+    variable-refresh-rate true
+    open-maximized true
+}
+
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// Floating Dialogs and Popups
+window-rule {
+    match title=r#"^Open File.*$"#
+    match title=r#"^Select a File.*$"#
+    match title=r#"^Choose wallpaper.*$"#
+    match title=r#"^Open Folder.*$"#
+    match title=r#"^Save As.*$"#
+    match title=r#"^Library.*$"#
+    match title=r#"^File Upload.*$"#
+    match title=r#".* wants to save.*"#
+    match title=r#"^Friends List.*"#
+    match title=r#"^Steam Settings.*"#
+    match title=r#"^Create or select new Steam library folder.*"#
+    match title=r#"^Save File$"#
+    match title=r#".* wants to open.*"#
+    match title=r#"^Select Folder$"#
+    
+    match app-id="org.kde.polkit-kde-authentication-agent-1"
+    match app-id="org.gnome.polkit-gnome-authentication-agent-1"
+    match app-id="zoom"
+    match app-id="onedriver"
+    match app-id="onedriver-launcher"
+    match app-id="xdg-desktop-portal-gtk"
+    match app-id="org.gnome.Calculator"
+    match title="Calculator"
+    match app-id="rofi"
+    match app-id="pavucontrol"
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="com.saivert.pwvucontrol"
+    match app-id="nwg-look"
+    match app-id="qt5ct"
+    match app-id="qt6ct"
+    match app-id="mpv"
+    match app-id="com.github.rafostar.Clapper"
+    match app-id="nm-applet"
+    match app-id="nm-connection-editor"
+    match app-id="blueman-manager"
+    match app-id="gnome-system-monitor"
+    match app-id="org.gnome.SystemMonitor"
+    match app-id="io.missioncenter.MissionCenter"
+    match app-id="yad"
+    match app-id="wihotspot"
+    match app-id="wihotspot-gui"
+    match app-id="evince"
+    match app-id="file-roller"
+    match app-id="org.gnome.FileRoller"
+    match app-id="baobab"
+    match app-id="org.gnome.baobab"
+    match title="Kvantum Manager"
+    match app-id="qalculate-gtk"
+    match app-id="Ferdium"
+    match title="Picture-in-Picture"
+    match title="ROG Control"
+    match title="hyprgui" 
+    match app-id="gamescope"
+    match app-id="viewnior"
+    match app-id="lximage-qt"
+    match app-id="kitty-dropterm"
+    match app-id="feh"
+    match app-id="Tk"
+    match app-id="zenity"
+    match app-id="imv"
+    match app-id="swayimg"
+    match app-id="io.github.Qalculate.qalculate-qt"
+    match app-id="nwg-displays"
+    match app-id="qimgv"
+    match app-id="org.quickshell"
+
+    open-floating true
+}
+
+// Thunar specifics
+window-rule {
+    match app-id="thunar" title="File Operation Progress"
+    match app-id="thunar" title="Confirm to replace files"
+    open-floating true
+}
+
+// Editor "Add Folder"
+window-rule {
+    match app-id="codium" title="Add Folder to Workspace"
+    match app-id="electron" title="Add Folder to Workspace"
+    open-floating true
+}
+
+// Specific Window Sizes
+window-rule {
+    match app-id="gnome-system-monitor"
+    match app-id="org.gnome.SystemMonitor"
+    match app-id="io.missioncenter.MissionCenter"
+    match app-id="xdg-desktop-portal-gtk"
+    match app-id="evince"
+    match app-id="wihotspot"
+    match app-id="wihotspot-gui"
+    
+    default-column-width { proportion 0.7; }
+    default-window-height { proportion 0.7; }
+}
+
+window-rule {
+    match title="Kvantum Manager"
+    match app-id="qt6ct"
+    match app-id="file-roller"
+    match app-id="org.gnome.FileRoller"
+    match app-id="whatsapp-for-linux"
+    match app-id="Ferdium"
+    match title="ROG Control"
+    match title="hyprgui"
+
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.7; }
+}

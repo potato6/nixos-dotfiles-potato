@@ -1,0 +1,13 @@
+// Niri configuration
+// Wiki: https://yalter.github.io/niri/Configuration:-Introduction
+
+include "dms/outputs.kdl"
+include "dms/colors.kdl"
+
+
+include "input.kdl"
+// include "outputs.kdl" //managed via DMS
+include "layout.kdl"
+include "settings.kdl"
+include "binds.kdl"
+include "rules.kdl"

@@ -51,3 +51,10 @@ xwayland-satellite {
     // off
     path "xwayland-satellite"
 }
+
+blur {
+    passes 1
+    offset 3.0
+    noise 0.2
+    saturation 1.5
+}

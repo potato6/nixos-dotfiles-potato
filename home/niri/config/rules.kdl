@@ -35,8 +35,7 @@ window-rule {
     match title=r#"^Create or select new Steam library folder.*"#
     match title=r#"^Save File$"#
     match title=r#".* wants to open.*"#
-    match title=r#"^Select Folder$"#
-    
+    match title=r#"^Select Folder$"#    
     match app-id="org.kde.polkit-kde-authentication-agent-1"
     match app-id="org.gnome.polkit-gnome-authentication-agent-1"
     match app-id="zoom"
@@ -72,6 +71,7 @@ window-rule {
     match app-id="qalculate-gtk"
     match app-id="Ferdium"
     match title="Picture-in-Picture"
+    match title="Picture*in*Picture"
     match title="ROG Control"
     match title="hyprgui" 
     match app-id="gamescope"
@@ -131,4 +131,22 @@ window-rule {
 
     default-column-width { proportion 0.6; }
     default-window-height { proportion 0.7; }
+}
+
+window-rule {
+    match app-id="org.wezfurlong.wezterm"
+     background-effect {
+        blur true
+    }
+}
+
+
+// Enable blur behind the fuzzel launcher.
+layer-rule {
+    match namespace="dms:bar"
+    match namespace="quickshell"
+
+    background-effect {
+        blur true
+    }
 }

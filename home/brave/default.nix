@@ -3,6 +3,11 @@
 
   programs.brave = {
     enable = true;
+
+    package = pkgs.brave.override {
+      vulkanSupport = true;
+    };
+
     dictionaries = [ pkgs.hunspellDictsChromium.en_US ];
 
     extensions = [
@@ -20,21 +25,16 @@
     # https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/gpu/vaapi.md
     # vulkan is just broken at the time
     commandLineArgs = [
-      # --- SUBJECTIVE ---
+
       "--enable-blink-features=MiddleClickAutoscroll"
       "--disable-smooth-scrolling"
 
       # --- GPU ---
+      "--disable-gpu-driver-bug-workaround"
+      "--use-angle=vulkan"
+      "--ignore-gpu-blocklist"
       "--use-gl=angle"
-      "--use-angle=gl"
-      "--ozone-platform-hint=auto"
-
-      # --- Canvas & Performance ---
-      "--enable-gpu-rasterization" # Force GPU to paint web content
-      "--enable-oop-rasterization" # Out-of-process rasterization (Critical for heavy sites)
-      "--enable-accelerated-2d-canvas" # Hardware acceleration for <canvas> tags
-      "--enable-zero-copy" # Reduces RAM->VRAM overhead
-      "--enable-native-gpu-memory-buffers" # Bypasses slow IPC for texture sharing
+      "--ozone-platform=x11" # vulkan only works with x11 for now
 
       # --- Feature Flags ---
       "--enable-features=${
@@ -42,23 +42,17 @@
           # Downloading
           "ParallelDownloading"
 
-          # Canvas/Rendering Optimization
-          "CanvasOopRasterization" # Moves Canvas logic off the main UI thread
-          # "RawDraw" # Reduces painting overhead (experimental but fast)
-          "UiGpuRasterization" # Renders the browser UI itself on GPU
-
           # Video/Audio
-          "VaapiVideoEncoder"
-          "VaapiVideoDecodeLinuxGL"
-          "AcceleratedVideoDecodeLinuxZeroCopyGL"
+          "TreesInViz"
           "ChromeWideEchoCancellation"
-
-          # Wayland/Display
-          "WaylandWindowDecorations"
-          "WaylandLinuxDrmSyncObjExplicitSync"
+          "AcceleratedVideoEncoder"
+          "VaapiOnNvidiaGPUs"
+          "VaapiIgnoreDriverChecks"
+          "Vulkan"
+          "DefaultANGLEVulkan"
+          "VulkanFromANGLE"
         ]
       }"
-
     ];
   };
 }

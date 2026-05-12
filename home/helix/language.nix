@@ -222,11 +222,11 @@ in
         "cpy"
         "ipy"
         "pyt"
-        { glob = ".python_history"; }
-        { glob = ".pythonstartup"; }
-        { glob = ".pythonrc"; }
-        { glob = "SConstruct"; }
-        { glob = "SConscript"; }
+        ".python_history"
+        ".pythonstartup"
+        ".pythonrc"
+        "SConstruct"
+        "SConscript"
       ];
       auto-format = true;
       formatter = {
@@ -248,23 +248,23 @@ in
       file-types = [
         "config"
         "sh"
-        { glob = ".zshrc"; }
-        { glob = ".bash_login"; }
-        { glob = ".bash_logout"; }
-        { glob = ".bash_profile"; }
-        { glob = ".bashrc"; }
-        { glob = ".profile"; }
-        { glob = ".zshenv"; }
-        { glob = ".zlogin"; }
-        { glob = ".zlogout"; }
-        { glob = ".zprofile"; }
-        { glob = ".zshrc"; }
-        { glob = "APKBUILD"; }
-        { glob = "PKGBUILD"; }
-        { glob = "eclass"; }
-        { glob = "ebuild"; }
-        { glob = "bazelrc"; }
-        { glob = ".bash_aliases"; }
+        ".zshrc"
+        ".bash_login"
+        ".bash_logout"
+        ".bash_profile"
+        ".bashrc"
+        ".profile"
+        ".zshenv"
+        ".zlogin"
+        ".zlogout"
+        ".zprofile"
+        ".zshrc"
+        "APKBUILD"
+        "PKGBUILD"
+        "eclass"
+        "ebuild"
+        "bazelrc"
+        ".bash_aliases"
       ];
       auto-format = true;
       formatter = {
@@ -286,7 +286,7 @@ in
       scope = "source.dockerfile";
       file-types = [
         "Dockerfile"
-        { glob = "Dockerfile"; }
+        "Dockerfile"
       ];
       auto-format = true;
       formatter = {

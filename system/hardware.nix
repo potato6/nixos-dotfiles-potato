@@ -3,7 +3,7 @@
 
   hardware = {
     cpu.amd.updateMicrocode = true;
-    #xone.enable = true;
+    xone.enable = false; # not necessarybut
     amdgpu = {
       initrd.enable = true; # Fixes low res bootscreen
     };
@@ -14,7 +14,7 @@
     };
   };
 
-  # Horsing around
+  #  Horsing around
   environment.variables = {
     RADV_EXPERIMENTAL = "hic";
   };

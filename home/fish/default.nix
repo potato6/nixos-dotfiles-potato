@@ -54,7 +54,6 @@
       alias la='ls -a'
       alias lla='ls -la'
       alias lt='ls --tree'   
-      alias grep='rg'
       alias yt='yt-dlp'
       alias umu='LD_PRELOAD=${pkgs.mimalloc}/lib/libmimalloc.so mangohud gamemoderun umu-run'
     '';

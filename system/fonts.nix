@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   fonts = {
     enableDefaultPackages = true;
     fontconfig = {
@@ -19,6 +20,9 @@
       fira-sans
       font-awesome # Provides Font Awesome 6 Free
       font-awesome_5 # Provides Font Awesome 5 Free
+      open-sans
+      liberation_ttf
+
     ];
   };
 

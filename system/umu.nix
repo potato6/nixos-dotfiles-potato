@@ -13,7 +13,7 @@
 
       PROTON_LOCAL_SHADER_CACHE = 1;
       ENABLE_LAYER_MESA_ANTI_LAG = 1;
-      PROTON_USE_NTSYNC = 1; # causing crashes(?)
+      PROTON_USE_NTSYNC = 1;
       PROTON_ENABLE_WAYLAND = 1;
       PROTON_USE_WOW64 = 1;
       WINE_FULLSCREEN_INTEGER_SCALING = 1;
@@ -21,12 +21,16 @@
       PROTON_FORCE_LARGE_ADRESS_AWARE = 1;
       STAGING_SHARED_MEMORY = 1;
       PROTON_PRIORITY_HIGH = 1;
+      PROTON_FSR4_UPGRADE = 1;
+      PROTON_FSR4_RDNA3_UPGRADE = 1;
+      PROTON_DXVK_LOWLATENCY = 1;
 
       WINEDLLOVERRIDES = "winhttp,d3dcompiler_47=n,b"; # fixes some modded games
 
-      PROTON_DXVK_GPLASYNC = 1; # causing instability on some games
+      PROTON_DXVK_GPLASYNC = 1;
       # https://github.com/Digger1955/dxvk-gplasync-lowlatency/blob/GPLALL-master-2.7.1/dxvk.conf
       DXVK_CONFIG = "dxvk.enableAsync=true;dxvk.gplAsyncCache=True;dxvk.framePace=low-latency;dxvk.lowLatencyAllowCpuFramesOverlap=True";
+
     };
 
     systemPackages = with pkgs; [

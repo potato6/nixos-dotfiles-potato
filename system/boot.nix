@@ -12,19 +12,10 @@
       timeout = 5; # timeout (in seconds) until loader boots the default menu item
     };
 
-    extraModulePackages = [
-      config.boot.kernelPackages.zenpower
-    ];
-
-    kernelModules = [
-      "zenpower"
-    ];
-
     kernelParams = [
       "lru_gen.enabled=y" # MGLRU
       "split_lock_detect=off"
       "processor.ignore_ppc=1"
-      "ec_sys.write_support=1"
       "tsc=reliable"
       "clocksource=tsc"
       "nowatchdog"
@@ -34,7 +25,6 @@
 
     kernel.sysctl = {
 
-      "kernel.sched_autogroup_enabled" = 1; # EXPERIMENTAL
       "kernel.numa_balancing" = 1;
 
       # The sysctl swappiness parameter determines the kernel's preference for pushing anonymous pages or page cache to disk in memory-starved situations.
@@ -51,6 +41,10 @@
       "vm.dirty_bytes" = 268435456;
       "vm.dirty_background_ratio" = 5;
       "vm.dirty_ratio" = 10;
+
+      # Reserves minimum amount of free memory for system operations.
+      # (typically 0.5-1% of total RAM)
+      "vm.min_free_kbytes" = 131072; # 128 MB
 
       # page-cluster controls the number of pages up to which consecutive pages are read in from swap in a single attempt.
       # This is the swap counterpart to page cache readahead. The mentioned consecutivity is not in terms of virtual/physical addresses,
@@ -73,13 +67,15 @@
       # Restricting access to kernel pointers in the proc filesystem
       "kernel.kptr_restrict" = 2;
 
-      # Increase netdev receive queue
-      # May help prevent losing packets
-      "net.core.netdev_max_backlog" = 4096;
+      "kernel.pid_max" = 4194304;
+      "kernel.sched_migration_cost_ns" = 5000000;
 
-      # Fix for some modded games
+      # Fix for some modded games that open too many files
       "vm.max_map_count" = 2147483642;
       "fs.file-max" = 524288;
+
+      # Optimize for many small files
+      "fs.aio-max-nr" = 1048576;
 
       "fs.inotify.max_user_watches" = 524288;
       "kernel.panic" = 10;
@@ -113,18 +109,28 @@
       "net.ipv4.tcp_keepalive_time" = 600;
       "net.ipv4.tcp_keepalive_probes" = 5;
       "net.ipv4.tcp_keepalive_intvl" = 60;
-      "net.ipv4.tcp_fin_timeout" = 30;
-      "net.ipv4.tcp_max_syn_backlog" = 2048;
       "net.ipv4.tcp_max_tw_buckets" = 400000;
       "net.ipv4.tcp_window_scaling" = 1;
       "net.ipv4.tcp_sack" = 1;
-      "net.core.rmem_max" = 16777216;
-      "net.core.wmem_max" = 16777216;
-      "net.ipv4.tcp_rmem" = "4096 87380 16777216"; # Min, Default, Max
-      "net.ipv4.tcp_wmem" = "4096 87380 16777216";
-      "net.core.somaxconn" = 1024;
+      "net.core.rmem_max" = 134217728;
+      "net.core.wmem_max" = 134217728;
+      "net.core.rmem_default" = 65536; # 64 KB
+      "net.core.wmem_default" = 65536; # 64 KB
+      "net.ipv4.tcp_rmem" = "4096 87380 67108864"; # min default max
+      "net.ipv4.tcp_wmem" = "4096 65536 67108864"; # min default max
+      # Increase connection backlog
+      "net.core.somaxconn" = 65535;
+      "net.core.netdev_max_backlog" = 65536;
+      "net.ipv4.tcp_max_syn_backlog" = 8192;
       "net.ipv4.tcp_syncookies" = 1;
       "net.ipv4.tcp_base_mss" = 536;
+
+      # Enable TCP timestamps
+      "net.ipv4.tcp_timestamps" = 1;
+
+      # Reduce TIME_WAIT connections
+      "net.ipv4.tcp_fin_timeout" = 15;
+      "net.ipv4.tcp_tw_reuse" = 1;
     };
   };
 

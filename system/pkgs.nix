@@ -25,7 +25,8 @@
     clang
     cargo
     rustc
-    nodejs
+    clippy
+    nodejs-slim
 
     # Nix tooling
     cachix
@@ -42,7 +43,6 @@
     qimgv
     playerctl
     sound-theme-freedesktop
-    kdePackages.kdenlive
     obs-studio
 
     # Gaming
@@ -75,7 +75,6 @@
     ramfetch
     speedtest-rs
     zenmonitor
-    kdePackages.filelight
 
     # Apps
     qalculate-qt
@@ -85,7 +84,6 @@
     # Misc
     ollama-vulkan
     gemini-cli-bin
-    antigravity-fhs
 
     # Register .exe thumbnailer with Nautilus
     (writeTextFile {

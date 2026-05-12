@@ -1,15 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 {
   systemd = {
     settings.Manager = {
       DefaultTimeoutStopSec = "10s";
       RuntimeWatchdogSec = "15s";
+      MaxRetentionSec = "2day";
     };
 
     services = {
       journald.serviceConfig = {
         SystemMaxUse = "50M";
-        MaxUse = "1G";
+        MaxUse = "250M";
       };
 
       "user@".serviceConfig = {
@@ -31,6 +32,14 @@
 
       "w! /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise"
     ];
-
   };
+
+  # workaround the small font during boot
+  console.packages = [ pkgs.terminus_font ];
+  # "ter" = Terminus
+  # "v"   = VGA/Console format
+  # "32"  = Size (you can also use 16, 24, 28)
+  # "b"   = Bold
+  console.font = "ter-v24b";
+
 }
